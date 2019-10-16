@@ -10,4 +10,9 @@
     </div>
 </template>
 <script src="./navmenu.js"></script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .navmenu{
+        background: #000;
+        height: 100vh;
+    }
+</style>

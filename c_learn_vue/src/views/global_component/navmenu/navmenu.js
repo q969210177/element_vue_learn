@@ -11,25 +11,25 @@ export default {
         },
         {
           menuTitle: "首页",
-          menuPath: "0",
+          menuPath: "1",
           menuName: "首页",
           menuIcon: ""
         },
         {
           menuTitle: "首页",
-          menuPath: "0",
+          menuPath: "2",
           menuName: "首页",
           menuIcon: ""
         },
         {
           menuTitle: "首页",
-          menuPath: "0",
+          menuPath: "3",
           menuName: "首页",
           menuIcon: ""
         },
         {
           menuTitle: "首页",
-          menuPath: "0",
+          menuPath: "4",
           menuName: "首页",
           menuIcon: ""
         }

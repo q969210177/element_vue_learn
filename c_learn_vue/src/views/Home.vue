@@ -3,7 +3,7 @@
     <el-row>
       <!-- 顶部的导航 -->
 
-      <el-col :span="4" class="border_red">
+      <el-col :span="4">
           <navMenu></navMenu>
       </el-col>
       <el-col :span="20" class="border_red">
