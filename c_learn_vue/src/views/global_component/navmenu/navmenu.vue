@@ -1,12 +1,14 @@
 <template>
     <div class="navmenu">
-      <el-menu  :default-active="activeIndex2"  background-color="#545c64"  text-color="#fff" active-text-color="#ffd04b">
-        <el-submenu index="2" v-for="(v,k) in menuNav" :key="k">
-            <template slot="title">{{v.menuTitle}}</template>
-            <el-menu-item index="2-1">{{v.menuTitle}}</el-menu-item>
-           
+        <el-row>11</el-row>
+      <el-menu :router="publicBol.true" :unique-opened="publicBol.true"    background-color="#545c64"  text-color="#fff" active-text-color="#ffd04b">
+       
+        <el-submenu index="">
+            <template slot="title">首页</template>
+            <el-menu-item   index="/home_index" > 1</el-menu-item>
         </el-submenu>
-      </el-menu>
+       
+      </el-menu> 
     </div>
 </template>
 <script src="./navmenu.js"></script>

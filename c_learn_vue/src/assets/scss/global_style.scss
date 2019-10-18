@@ -8,7 +8,17 @@
     .padding_right_#{$i}{padding-right:1px* $i}
     .padding_top_#{$i}{padding-top:1%* $i}
     .padding_bottom_#{$i}{padding-bottom:1%* $i}
+    .line_heigth_#{$i}{line-height:2px*$i;}
   }
   .border_red{
     border: 1px solid red;
+  }
+  .text_center{
+    text-align: center;
+  }
+  .text_rigth{
+    text-align: right;
+  }
+  .text_left{
+    text-align: left;
   }
