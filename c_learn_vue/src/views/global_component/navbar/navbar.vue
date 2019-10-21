@@ -1,15 +1,17 @@
 <template>
-    <div>
-        1
+    <div class="navbar line_heigth_20">
+        <el-row>
+            <el-col :span="1" >
+                <i class="iconfont icon-sousuo"></i>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
-<script>
-    export default {
-        
-    }
-</script>
+
 
 <style lang="scss" scoped>
-
+    .navbar{
+        background: aquamarine;
+    }
 </style>

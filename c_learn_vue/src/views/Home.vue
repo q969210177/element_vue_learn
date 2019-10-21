@@ -2,21 +2,20 @@
   <div class="home">
     <el-row>
       <!-- 顶部的导航 -->
-      <el-col  :span="4">
+      <el-col  :span="1">
         <el-row > 
-          <navMenu></navMenu>
+          <navMenu ></navMenu>
         </el-row>
-          
       </el-col>
-      <el-col  :span="20" >
+      <!-- 顶部的导航头 -->
+      <el-col  :span="23" >
         <el-row>
-          <navHeader></navHeader>
+          <navHeader ></navHeader>
         </el-row>
         <el-row>
           <router-view />
         </el-row>
       </el-col>
-      
     </el-row>
   </div>
 </template>
@@ -27,7 +26,7 @@ export default {
   name: "home",
   data() {
     return {
-      bol:true,
+      bol:false,
       num:5
     }
   },

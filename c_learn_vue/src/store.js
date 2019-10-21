@@ -4,7 +4,13 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    globalBol: {
+      t: true,
+      f: false
+    },
+    menuCollBol: true
+  },
   mutations: {},
   actions: {}
 });
