@@ -2,22 +2,45 @@ export default {
   name: "navmenu",
   data() {
     return {
-      menuNav: [
+      navMenuData: [
         {
-          menuTitle: "首页",
-          menuPath: "0",
-          menuName: "昨日变化",
-          menuIcon: ""
+          name: "系统设置",
+          path: "/sys",
+          permission: "true",
+          iconFont: "el-icon-s-tools",
+          itemMenu: [
+            {
+              name: "用户管理",
+              path: "/user",
+              permission: "false",
+              iconFont: "el-icon-user-solid"
+            },
+            {
+              name: "数据管理",
+              path: "/data",
+              permission: "true",
+              iconFont: "el-icon-s-data"
+            },
+            {
+              name: "商户管理",
+              path: "/shop",
+              permission: "true",
+              iconFont: "el-icon-s-shop"
+            }
+          ]
         },
         {
-          menuTitle: "用户列表",
-          menuPath: "1",
-          menuName: "用户列表",
-          menuIcon: ""
+          name: "看一看",
+          path: "/look",
+          permission: "true",
+          iconFont: "iconfont icon-guanliyuan"
         },
-        { menuTitle: "首页", menuPath: "2", menuName: "首页", menuIcon: "" },
-        { menuTitle: "首页", menuPath: "3", menuName: "首页", menuIcon: "" },
-        { menuTitle: "首页", menuPath: "4", menuName: "首页", menuIcon: "" }
+        {
+          name: "图标",
+          path: "/icon",
+          permission: "true",
+          iconFont: "el-icon-s-management"
+        }
       ],
       activeIndex2: "1",
       publicBol: {
