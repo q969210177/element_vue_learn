@@ -5,28 +5,28 @@ export default {
       navMenuData: [
         {
           name: "首页",
-          path: "/home",
+          path: "/home_index",
           permission: true,
           iconFont: "el-icon-location",
           type: "firstLevel"
         },
         {
           name: "文档",
-          path: "/home",
+          path: "/home_file",
           permission: true,
           iconFont: "el-icon-location",
           type: "firstLevel"
         },
         {
           name: "系统设置",
-          path: "/sys",
+          path: "/home_setting",
           permission: true,
           iconFont: "el-icon-s-tools",
           type: "secondary",
           itemMenu: [
             {
               name: "用户管理",
-              path: "/user",
+              path: "/home_setting",
               permission: false,
               iconFont: "el-icon-user-solid"
             },
@@ -46,7 +46,7 @@ export default {
         },
         {
           name: "看一看",
-          path: "/look",
+          path: "/home_look",
           permission: true,
           iconFont: "iconfont icon-guanliyuan",
           type: "secondary",
@@ -54,7 +54,7 @@ export default {
         },
         {
           name: "图标",
-          path: "/icon",
+          path: "/home_icon",
           permission: true,
           iconFont: "el-icon-s-management",
           type: "firstLevel"

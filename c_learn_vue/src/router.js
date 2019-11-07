@@ -12,13 +12,28 @@ const routes = new Router({
       name: "home",
       component: Home,
       beforeEach: (to, from, next) => {
-        console.log(to);
         next();
       },
       children: [
         {
           path: "/home_index",
-          component: () => import("./components/root/root.vue")
+          component: () => import("@/components/root/root.vue")
+        },
+        {
+          path: "/home_file",
+          component: () => import("@/components/document/document.vue")
+        },
+        {
+          path: "/home_setting",
+          component: () => import("@/components/setting/setting.vue")
+        },
+        {
+          path: "/home_look",
+          component: () => import("@/components/look/look.vue")
+        },
+        {
+          path: "/home_icon",
+          component: () => import("@/components/icon/icon.vue")
         }
       ]
     },

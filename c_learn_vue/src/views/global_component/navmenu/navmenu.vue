@@ -4,8 +4,8 @@
     <el-row>
       <!-- :collapse="$store.state.menuCollBol":router="publicBol.true" :unique-opened="publicBol.true" -->
       <el-col>
-        <el-menu :unique-opened="publicBol.true" default-active="/home" background-color="#545c64"
-          active-text-color="#ffd04b" v-for="(v,k) in navMenuData" :key="k">
+        <el-menu :unique-opened="publicBol.true" default-active="1" background-color="#545c64"
+           text-color="#fff" v-for="(v,k) in navMenuData" :key="k" active-text-color="#ff8c00" :router="publicBol.true">
           <el-menu-item v-if="v.type==='firstLevel'" :index="v.path">
             <i :class="v.iconFont"></i>
             <span>{{v.name}}</span>
