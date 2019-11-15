@@ -12,27 +12,27 @@ export default {
         },
         {
           name: "文档",
-          path: "/home_file",
+          path: "/document",
           permission: true,
-          iconFont: "el-icon-location",
+          iconFont: "iconfont icon-tubiaozhizuomobanyihuifu-",
           type: "firstLevel"
         },
         {
           name: "系统设置",
-          path: "/home_setting",
+          path: "setting",
           permission: true,
           iconFont: "el-icon-s-tools",
           type: "secondary",
           itemMenu: [
             {
               name: "用户管理",
-              path: "/home_setting",
+              path: "/user_setting",
               permission: false,
               iconFont: "el-icon-user-solid"
             },
             {
               name: "数据管理",
-              path: "/data",
+              path: "/home_data",
               permission: true,
               iconFont: "el-icon-s-data"
             },
@@ -46,11 +46,11 @@ export default {
         },
         {
           name: "看一看",
-          path: "/home_look",
+          path: "look",
           permission: true,
-          iconFont: "iconfont icon-guanliyuan",
+          iconFont: "iconfont icon-kanbaozhi",
           type: "secondary",
-          itemMenu: [{ name: "知乎", path: "/zhihu", permission: true }]
+          itemMenu: [{ name: "知乎", path: "/look", permission: true , iconFont: "iconfont icon-zhihu" }]
         },
         {
           name: "图标",
@@ -60,23 +60,13 @@ export default {
           type: "firstLevel"
         }
       ],
-      activeIndex2: "1",
       publicBol: {
         true: true,
         false: false
       }
-      // test: [
-      //   { type: "a", path: "index1" },
-      //   { type: "b", path: "index2" },
-      //   { type: "c", path: "index3" },
-      //   { type: "b", path: "index4" },
-      //   { type: "b", path: "index5" },
-      //   { type: "c", path: "index6" }
-      // ]
     };
   },
   methods: {
-    name() {}
   },
   mounted() {}
 };
