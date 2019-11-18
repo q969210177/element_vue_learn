@@ -14,12 +14,12 @@ const routes = new Router({
       beforeEach: (to, from, next) => {
         next();
       },
-      redirect: "/home_index",
+      redirect: "/index",
       children: [
         {
           //首页
-          path: "/home_index",
-          name:"首页",
+          path: "/index",
+          name: "首页",
           component: () => import("@/components/root/root.vue")
         },
         {
@@ -37,25 +37,25 @@ const routes = new Router({
         {
           //数据管理
           path: "/home_data",
-          name:"数据管理",
+          name: "数据管理",
           component: () => import("@/components/user_data/user_data.vue")
         },
         {
           //商户管理
           path: "/shop",
-          name:"商户管理",
+          name: "商户管理",
           component: () => import("@/components/shop/shop.vue")
         },
         {
           //知乎
           path: "/look",
-          name:"知乎",
+          name: "知乎",
           component: () => import("@/components/look/look.vue")
         },
         {
           //字体图标库
           path: "/home_icon",
-          name:"图标",
+          name: "图标",
           component: () => import("@/components/icon/icon.vue")
         }
       ],
