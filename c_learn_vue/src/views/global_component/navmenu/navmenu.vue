@@ -1,12 +1,6 @@
 <template>
   <div>
     <el-row>
-      <el-col class="font_col line_heigth_20">
-        121
-      </el-col>
-    </el-row>
-
-    <el-row>
       <!-- :collapse="$store.state.menuCollBol":router="publicBol.true" :unique-opened="publicBol.true" -->
       <el-col>
         <el-menu :unique-opened="publicBol.true" :default-active="defaultPath"  background-color="#545c64"
@@ -31,5 +25,4 @@
   </div>
 </template>
 <script src="./navmenu.js"></script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

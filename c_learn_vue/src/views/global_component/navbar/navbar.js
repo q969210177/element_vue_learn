@@ -9,6 +9,25 @@ export default {
         newPassWord: "",
         ComparisonPassword: ""
       },
+      changePassWordFormRules: {
+        userName: [
+          { required: true, message: "账户名不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        oldPassWord: [
+          { required: true, message: "原始密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        newPassWord: [
+          { required: true, message: "新密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        ComparisonPassword: [
+          { required: true, message: "新密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ]
+        // validatePass
+      },
       dialogFormVisible: false,
       timeout: null
     };
