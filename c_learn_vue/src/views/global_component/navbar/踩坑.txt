@@ -1,0 +1,5 @@
+el-autocomplete的一个坑
+el-autocomplete显示的时候必须有value字段，可以在返回的对象里面手动添加一个value属性
+item.value = item.name;
+备注：如果一开始显示的时候也没有列表项，也是手动添加value属性。
+没有value属性会导致就算返回了值但是也不会显示

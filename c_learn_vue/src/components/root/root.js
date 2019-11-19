@@ -1,37 +1,58 @@
+//引入echart实例
+import echarts from "echarts";
 export default {
   data() {
-    // <cell :class='[cellRow==curCell.tableTr||cellCol==curCell.y?"highLight":""]'></cell>
     return {
-      tableData: [
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
+      demoData: {
+        title: { text: "demo" },
+        tooltip: {},
+        xAxis: {
+          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
         },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1517 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1519 弄"
-        },
-        {
-          date: { background: true, time: 2012 },
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1516 弄"
-        }
-      ],
-      curCell: {
-        x: 0,
-        y: 0
+        yAxis: {},
+        series: [
+          {
+            name: "销量",
+            type: "bar",
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
       },
-
-      tableTd: ""
+      cardData: [
+        {
+          icon: "el-icon-user-solid",
+          name: ["新用户", Math.ceil(Math.random() * 1000 * Math.random())],
+          data: "",
+          class: "user"
+        },
+        {
+          icon: "el-icon-chat-dot-square",
+          name: ["未处理事件", Math.ceil(Math.random() * 1000 * Math.random())],
+          data: "",
+          class: "chat"
+        },
+        {
+          icon: "el-icon-female",
+          name: ["女生", Math.ceil(Math.random() * 1000 * Math.random())],
+          data: "",
+          class: "female"
+        },
+        {
+          icon: "el-icon-camera",
+          name: ["图片", Math.ceil(Math.random() * 1000 * Math.random())],
+          data: "",
+          class: "camera"
+        }
+      ]
     };
   },
-  mounted() {},
+  mounted() {
+    //找到dom实例
+    let dom = this.$refs.demo.$el;
+    // 注入dom实例;
+    let myChart = echarts.init(dom);
+    myChart.setOption(this.demoData);
+    // console.log(echarts);
+  },
   methods: {}
 };

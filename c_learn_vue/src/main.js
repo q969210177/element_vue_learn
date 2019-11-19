@@ -5,6 +5,7 @@ import store from "./store";
 import "./assets/scss/global_style.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+import "element-ui/lib/theme-chalk/display.css";
 //引入icon图标
 import "@/assets/css/iconfont.css";
 Vue.use(ElementUI);

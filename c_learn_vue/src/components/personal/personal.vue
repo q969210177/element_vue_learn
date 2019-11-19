@@ -1,11 +1,9 @@
 <template>
   <div>
-    icon
+    //{ path: "/personal" }
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script src="./personal.js"></script>
 
 <style lang="scss" scoped></style>

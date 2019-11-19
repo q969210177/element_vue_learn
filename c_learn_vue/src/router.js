@@ -25,13 +25,13 @@ const routes = new Router({
         {
           //文档页
           path: "/document",
-          name:"文档页",
+          name: "文档页",
           component: () => import("@/components/document/document.vue")
         },
         {
           //用户管理
           path: "/user_setting",
-          name:"用户管理",
+          name: "用户管理",
           component: () => import("@/components/setting/setting.vue")
         },
         {
@@ -57,9 +57,15 @@ const routes = new Router({
           path: "/home_icon",
           name: "图标",
           component: () => import("@/components/icon/icon.vue")
+        },
+        {
+          path: "/personal",
+          name: "个人中心",
+          component: () => import("@/components/personal/personal.vue")
+          // component: () =>
+          //   import("@/views/global_component/personal/personal.vue")
         }
-      ],
-      
+      ]
     },
     {
       path: "/",
