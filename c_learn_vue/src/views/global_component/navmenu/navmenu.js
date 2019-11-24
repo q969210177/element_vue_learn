@@ -19,7 +19,7 @@ export default {
         },
         {
           name: "系统设置",
-          path: "/home_setting",
+          path: "",
           permission: true,
           iconFont: "el-icon-s-tools",
           type: "secondary",
