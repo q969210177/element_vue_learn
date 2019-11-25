@@ -8,7 +8,9 @@
     .padding_right_#{$i}{padding-right:1px* $i}
     .padding_top_#{$i}{padding-top:1%* $i}
     .padding_bottom_#{$i}{padding-bottom:1%* $i}
+    .padding_#{$i}{padding:5px* $i}
     .line_heigth_#{$i}{line-height:2px*$i;}
+    .font_size_#{$i}{font-size: 1px*$i;}
   }
   .border_red{
     border: 1px solid red;
@@ -21,4 +23,13 @@
   }
   .text_left{
     text-align: left;
+  }
+  .font_col{
+    color: rgba(#f69,.5);
+  }
+  .box_shandow:active{
+    box-shadow:  5px 5px 5px   #888888 inset;
+  }
+  .vertical_align_middle{
+    vertical-align: middle;
   }

@@ -1,46 +1,34 @@
 <template>
   <div class="home">
-    <el-row>
-      <!-- 顶部的导航 -->
-      <el-col  :span="4">
-        <el-row > 
-          <navMenu ></navMenu>
-        </el-row>
-      </el-col>
-      <!-- 顶部的导航头 -->
-      <el-col  :span="20" >
-        <el-row>
-          <navHeader ></navHeader>
-        </el-row>
-        <el-row>
+    <el-container>
+      <el-aside class="navmenu" width="auto">
+        <navMenu></navMenu>
+      </el-aside>
+      <el-container>
+        <el-header height="auto">
+          <navHeader></navHeader>
+        </el-header>
+        <el-main>
+           <el-breadcrumb separator="/" class="border_red padding_1">
+              <el-breadcrumb-item :replace="$store.state.globalBol.t" :key="k" v-for="(v,k) in  $store.state.breadcrumbData" :to="{ path: v.path }">{{v.name}}</el-breadcrumb-item>
+          </el-breadcrumb>
           <router-view />
-        </el-row>
-      </el-col>
-    </el-row>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
-
-export default {
-  name: "home",
-  data() {
-    return {
-      bol:false,
-      num:5
-    }
-  },
-  
-  mounted () {
+  export default {
+    name: "home",
     
-    
-  },
- 
-  methods: {
-    
-  },
-  components: { 
-  
-  }
-};
+  };
 </script>
+<style scoped>
+  .navmenu {
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+  }
+</style>

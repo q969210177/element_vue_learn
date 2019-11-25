@@ -7,6 +7,11 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
 Vue.use(ElementUI);
+//解决重复点击的路由报错
+const originalPush = router.push;
+router.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+};
 Vue.config.productionTip = false;
 import Navbar from "./views/global_component/navmenu/navmenu.vue";
 import Header from "./views/global_component/navbar/navbar.vue";

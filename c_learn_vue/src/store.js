@@ -9,7 +9,8 @@ export default new Vuex.Store({
       t: true,
       f: false
     },
-    menuCollBol: true
+    breadcrumbData: [{ name: "首页", path: "/index", id: "1" }],
+    collapseMenuCollBol: false
   },
   mutations: {},
   actions: {}

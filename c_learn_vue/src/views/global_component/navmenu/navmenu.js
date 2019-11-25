@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export default {
   name: "navmenu",
   data() {
@@ -5,78 +6,93 @@ export default {
       navMenuData: [
         {
           name: "首页",
-          path: "/home_index",
+          path: "/index",
           permission: true,
           iconFont: "el-icon-location",
-          type: "firstLevel"
+          type: "firstLevel",
+          id: "1"
         },
         {
           name: "文档",
-          path: "/home_file",
+          path: "/document",
           permission: true,
-          iconFont: "el-icon-location",
-          type: "firstLevel"
+          iconFont: "iconfont icon-tubiaozhizuomobanyihuifu-",
+          type: "firstLevel",
+          id: "2"
         },
         {
           name: "系统设置",
+<<<<<<< HEAD
           path: "",
+=======
+          path: "setting",
+>>>>>>> c561c44e3f817b66da0b7d40e6d86dcdd59a65ae
           permission: true,
           iconFont: "el-icon-s-tools",
           type: "secondary",
           itemMenu: [
             {
               name: "用户管理",
-              path: "/home_setting",
+              path: "/user_setting",
               permission: false,
-              iconFont: "el-icon-user-solid"
+              iconFont: "el-icon-user-solid",
+              id: "3"
             },
             {
               name: "数据管理",
-              path: "/data",
+              path: "/home_data",
               permission: true,
-              iconFont: "el-icon-s-data"
+              iconFont: "el-icon-s-data",
+              id: "4"
             },
             {
               name: "商户管理",
               path: "/shop",
               permission: true,
-              iconFont: "el-icon-s-shop"
+              iconFont: "el-icon-s-shop",
+              id: "6"
             }
           ]
         },
         {
           name: "看一看",
-          path: "/home_look",
+          path: "look",
           permission: true,
-          iconFont: "iconfont icon-guanliyuan",
+          iconFont: "iconfont icon-kanbaozhi",
           type: "secondary",
-          itemMenu: [{ name: "知乎", path: "/zhihu", permission: true }]
+          itemMenu: [
+            {
+              name: "知乎",
+              path: "/look",
+              permission: true,
+              iconFont: "iconfont icon-zhihu",
+              id: "6"
+            }
+          ]
         },
         {
           name: "图标",
           path: "/home_icon",
           permission: true,
           iconFont: "el-icon-s-management",
-          type: "firstLevel"
+          type: "firstLevel",
+          id: "7"
         }
       ],
-      activeIndex2: "1",
       publicBol: {
         true: true,
         false: false
-      }
-      // test: [
-      //   { type: "a", path: "index1" },
-      //   { type: "b", path: "index2" },
-      //   { type: "c", path: "index3" },
-      //   { type: "b", path: "index4" },
-      //   { type: "b", path: "index5" },
-      //   { type: "c", path: "index6" }
-      // ]
+      },
+      clickBol: false,
+      defaultPath: window.location.hash.substring(1)
     };
   },
   methods: {
-    name() {}
+    // eslint-disable-next-line no-unused-vars
+    addHeader(name, path, id) {
+      let storeHeader = { name: name, path: path, id: id };
+      this.$store.state.breadcrumbData[1] = storeHeader;
+    }
   },
   mounted() {}
 };
