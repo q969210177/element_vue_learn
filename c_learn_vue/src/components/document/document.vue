@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column type="index" :index="indexMethod"> </el-table-column>
@@ -16,6 +17,12 @@
     >
     </el-pagination>
   </div>
+=======
+    <div>
+        Document
+        
+    </div>
+>>>>>>> b3d983b221849008494837fae4bc39944546e6fa
 </template>
 
 <script>

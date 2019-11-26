@@ -22,7 +22,11 @@ export default {
         },
         {
           name: "系统设置",
+<<<<<<< HEAD
+          path: "",
+=======
           path: "setting",
+>>>>>>> c561c44e3f817b66da0b7d40e6d86dcdd59a65ae
           permission: true,
           iconFont: "el-icon-s-tools",
           type: "secondary",
