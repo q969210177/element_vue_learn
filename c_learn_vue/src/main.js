@@ -5,9 +5,13 @@ import store from "./store";
 import "./assets/scss/global_style.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+<<<<<<< HEAD
 import "element-ui/lib/theme-chalk/display.css";
 //引入icon图标
 import "@/assets/css/iconfont.css";
+=======
+
+>>>>>>> b3d983b221849008494837fae4bc39944546e6fa
 Vue.use(ElementUI);
 //解决重复点击的路由报错
 const originalPush = router.push;

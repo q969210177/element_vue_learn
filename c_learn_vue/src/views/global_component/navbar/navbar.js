@@ -3,6 +3,7 @@ export default {
   name: "navbar",
   data() {
     return {
+<<<<<<< HEAD
       navbarDropdownData: [
         { name: "个人中心", path: "/personal" },
         { name: "首页", path: "/home" },
@@ -15,6 +16,36 @@ export default {
       navbarSerach: false,
       src:
         "https://colinbendell.cloudinary.com/image/upload/c_crop,f_auto,g_auto,h_350,w_400/v1512090971/Wizard-Clap-by-Markus-Magnusson.gif"
+=======
+      changePassWordForm: {
+        uid: "",
+        userName: "",
+        oldPassWord: "",
+        newPassWord: "",
+        ComparisonPassword: ""
+      },
+      changePassWordFormRules: {
+        userName: [
+          { required: true, message: "账户名不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        oldPassWord: [
+          { required: true, message: "原始密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        newPassWord: [
+          { required: true, message: "新密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        ComparisonPassword: [
+          { required: true, message: "新密码不能为空", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ]
+        // validatePass
+      },
+      dialogFormVisible: false,
+      timeout: null
+>>>>>>> b3d983b221849008494837fae4bc39944546e6fa
     };
   },
   mounted() {

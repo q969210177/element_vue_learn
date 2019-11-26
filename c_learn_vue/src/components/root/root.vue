@@ -36,7 +36,7 @@
 }
 
 .card_font {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(0, 0, 0, 0.55);
 }
 .user {
   color: #40c9c6;

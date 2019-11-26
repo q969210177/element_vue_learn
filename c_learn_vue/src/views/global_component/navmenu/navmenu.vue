@@ -45,4 +45,8 @@
   </div>
 </template>
 <script src="./navmenu.js"></script>
+<<<<<<< HEAD
 <style lang="scss" scoped></style>
+=======
+<style lang="scss" scoped></style>
+>>>>>>> b3d983b221849008494837fae4bc39944546e6fa
