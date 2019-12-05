@@ -5,8 +5,7 @@
       <el-col>
         <el-menu  :unique-opened="publicBol.true" :default-active="defaultPath" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :router="publicBol.true"
           :collapse="$store.state.collapseMenuCollBol">
-          <div  v-for="(v, k) in navMenuData" :key="k">
-            <el-menu-item  @click="addHeader(v.name, v.path, v.id)"  v-if="v.type === 'firstLevel'"  :index="v.path">
+            <el-menu-item v-for="(v, k) in navMenuData" :key="k"  @click="addHeader(v.name, v.path, v.id)"  v-if="v.type === 'firstLevel'"  :index="v.path">
               <i :class="v.iconFont"></i>
               <span>{{ v.name }}</span>
             </el-menu-item>
@@ -20,7 +19,6 @@
                 <span>{{ item.name }}</span>
               </el-menu-item>
             </el-submenu>
-        </div>
         </el-menu>
       </el-col>
     </el-row>

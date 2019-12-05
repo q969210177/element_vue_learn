@@ -73,7 +73,7 @@
   background: #5abb5a;
   color: #fff;
 }
-.card_father:hover .el-icon-female {
+.card_father:hover .el-icon-eleme {
   background: #f7af4a;
   color: #fff;
 }

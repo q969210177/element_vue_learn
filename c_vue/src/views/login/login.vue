@@ -71,7 +71,7 @@ export default {
           { min: 3, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
         ]
       }
-    };
+    }
   },
   methods: {
     login(formName) {

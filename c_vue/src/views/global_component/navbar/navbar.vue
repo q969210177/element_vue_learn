@@ -20,9 +20,9 @@
       <el-col :xs="{ span: 21 }" :span="23">
         <el-row>
           <el-col class="hidden-sm-and-down text_rigth" :md="{ span: 22 }" :xl="{ span: 22 }" :lg="{ span: 22 }">
-            <div class="inline_block ">
+            <!-- <div class="inline_block ">
               <i class="search_icon el-icon-search font_size_24"></i>
-            </div>
+            </div> -->
             <div class="inline_block">
               <el-autocomplete v-model="routerSerach" :fetch-suggestions="querySearch" placeholder="请输入导航名" @select="handleSelect"></el-autocomplete>
             </div>

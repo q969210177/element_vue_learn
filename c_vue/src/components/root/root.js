@@ -11,7 +11,6 @@ export default {
       "#f5f5f5",
       "#A6F16C"
     ];
-    //let log = console.log;
     return {
       indexLineChartData: {
         color,
@@ -50,13 +49,9 @@ export default {
             },
             axisPointer: {
               label: {
+                //浮动的显示
                 formatter: function(params) {
                   return params.value;
-                  // "降水量  " +params
-                  // params.value +
-                  // (params.seriesData.length
-                  //   ? "：" + params.seriesData[0].data
-                  //   : "")
                 }
               }
             },
@@ -162,15 +157,16 @@ export default {
           }
         ]
       },
+      //饼图数据
       indexPieChartData: {
         tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
+          trigger: "item"
+          // formatter: "{a} <br/>{b}: {c} ({d}%)"
         },
         legend: {
           orient: "vertical",
           x: "left",
-          data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+          data: ["1111", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
         },
         series: [
           {
@@ -197,7 +193,7 @@ export default {
               }
             },
             data: [
-              { value: 335, name: "直接访问" },
+              { value: 335, name: "啊啊啊" },
               { value: 310, name: "邮件营销" },
               { value: 234, name: "联盟广告" },
               { value: 135, name: "视频广告" },
