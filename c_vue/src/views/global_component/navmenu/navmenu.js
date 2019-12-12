@@ -30,7 +30,7 @@ export default {
             {
               name: "用户管理",
               path: "/user_setting",
-              permission: false,
+              permission: true,
               iconFont: "el-icon-user-solid",
               id: "3"
             },
@@ -52,7 +52,7 @@ export default {
         },
         {
           name: "看一看",
-          path: "look",
+          path: "",
           permission: true,
           iconFont: "iconfont icon-shequ",
           type: "secondary",

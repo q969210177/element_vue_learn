@@ -2,6 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Login from "../views/login/login.vue";
 import Home from "../views/home/Home.vue";
+//import Store from "vuex";
+//import { log } from "util";
 
 Vue.use(VueRouter);
 
@@ -15,9 +17,6 @@ const routes = [
     path: "/home",
     name: "home",
     component: Home,
-    beforeEach: (to, from, next) => {
-      next();
-    },
     redirect: "/index",
     children: [
       {
@@ -25,6 +24,12 @@ const routes = [
         path: "/index",
         name: "首页",
         component: () => import("@/components/root/root.vue")
+        // beforeEnter(to, from, next) {
+        //   console.log(to.path);
+        //   next(vm => {
+        //     console.log(vm, 111);
+        //   });
+        // }
       },
       {
         //文档页
@@ -66,8 +71,6 @@ const routes = [
         path: "/personal",
         name: "个人中心",
         component: () => import("@/components/personal/personal.vue")
-        // component: () =>
-        //   import("@/views/global_component/personal/personal.vue")
       }
     ]
     // route level code-splitting
@@ -79,5 +82,12 @@ const routes = [
 const router = new VueRouter({
   routes
 });
-
+// router.beforeEach((to, from, next) => {
+//   if (to.path !== "/login") {
+//     next();
+//   } else {
+//     console.log(from);
+//     next(false);
+//   }
+// });
 export default router;

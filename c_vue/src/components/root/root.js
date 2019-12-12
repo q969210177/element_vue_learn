@@ -1,6 +1,8 @@
 //引入echart实例
 import echarts from "echarts";
+import Axios from "axios";
 export default {
+  name: "index",
   data() {
     let color = [
       "#2c71ad",
@@ -160,17 +162,17 @@ export default {
       //饼图数据
       indexPieChartData: {
         tooltip: {
-          trigger: "item"
-          // formatter: "{a} <br/>{b}: {c} ({d}%)"
+          trigger: "item",
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
         },
         legend: {
           orient: "vertical",
           x: "left",
-          data: ["1111", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+          data: ["1楼电费", "2楼电费", "3楼电费", "4楼电费"]
         },
         series: [
           {
-            name: "访问来源",
+            name: "电费",
             type: "pie",
             radius: ["50%", "70%"],
             avoidLabelOverlap: false,
@@ -193,11 +195,10 @@ export default {
               }
             },
             data: [
-              { value: 335, name: "啊啊啊" },
-              { value: 310, name: "邮件营销" },
-              { value: 234, name: "联盟广告" },
-              { value: 135, name: "视频广告" },
-              { value: 1548, name: "搜索引擎" }
+              { value: 335, name: "1楼电费" },
+              { value: 310, name: "2楼电费" },
+              { value: 234, name: "3楼电费" },
+              { value: 135, name: "4楼电费" }
             ]
           }
         ]
@@ -230,6 +231,21 @@ export default {
       ]
     };
   },
+  beforeMount() {
+    // let token = sessionStorage.getItem("id");
+    // if (token !== this.$route.params.token) {
+    //   this.$message({
+    //     message: "登录过期",
+    //     type: "warning",
+    //     showClose: true,
+    //     onClose: () => {
+    //       this.$router.push({
+    //         name: "login"
+    //       });
+    //     }
+    //   });
+    // }
+  },
   mounted() {
     //找到dom实例
     let indexLineChart = echarts.init(this.$refs.indexLineChart.$el);
@@ -237,6 +253,20 @@ export default {
     // 注入dom实例;
     indexLineChart.setOption(this.indexLineChartData);
     indexPieChart.setOption(this.indexPieChartData);
+    Axios({
+      method: "post",
+      url: "http://localhost/php/menu/menu.php"
+    }).then(res => {
+      console.log(res);
+    });
   },
-  methods: {}
+  methods: {
+    // test() {
+    //   this.$router.push({ name: "" });
+    // }
+  }
+  // beforeUpdate(to, from, next) {
+  //   console.log(111);
+  //   next();
+  // }
 };

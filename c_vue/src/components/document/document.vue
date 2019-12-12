@@ -1,12 +1,11 @@
 <template>
   <div>
-    document
+    document111
   </div>
 </template>
 
 <script>
 export default {
-  name:"文档",
   data() {
     return {}
   }

@@ -51,43 +51,7 @@
   </div>
 </template>
 
-<script>
-//import Axios from "axios";
-export default {
-  data() {
-    //let userVeri = function(rule,value,callback) {};
-    return {
-      loginForm: {
-        userName: null,
-        passWord: null
-      },
-      loginFormRules: {
-        userName: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 4, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
-        ],
-        passWord: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 3, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
-        ]
-      }
-    }
-  },
-  methods: {
-    login(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          this.$router.push({ path: "/home" });
-        } else {
-          
-          return false;
-        }
-      });
-    }
-  }
-};
-</script>
-
+<script src="./login.js"></script>
 <style lang="scss" scoped>
 .login {
   height: 100vh;
@@ -98,6 +62,6 @@ export default {
   color: green;
 }
 .login_form{
-margin-top: 20%
+padding-top:20vh
 }
 </style>
