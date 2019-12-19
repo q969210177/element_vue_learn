@@ -1,6 +1,8 @@
 //引入echart实例
 import echarts from "echarts";
-import Axios from "axios";
+//import Axios from "axios";
+import Swiper from "swiper";
+import "swiper/css/swiper.min.css";
 export default {
   name: "index",
   data() {
@@ -253,12 +255,13 @@ export default {
     // 注入dom实例;
     indexLineChart.setOption(this.indexLineChartData);
     indexPieChart.setOption(this.indexPieChartData);
-    Axios({
-      method: "post",
-      url: "http://localhost/php/menu/menu.php"
-    }).then(res => {
-      console.log(res);
-    });
+    // Axios({
+    //   method: "post",
+    //   url: "http://localhost/php/menu/menu.php"
+    // }).then(res => {
+    //   console.log(res);
+    // });
+    console.log(Swiper);
   },
   methods: {
     // test() {

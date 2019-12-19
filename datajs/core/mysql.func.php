@@ -105,7 +105,7 @@ include "config.php";
 	   
 	  $sql = "insert $tbName($keys) values($vals)";
 	
-	// echo $sql;
+	 //echo $sql;
 	
 	  mysqli_query($link, $sql);
 	  

@@ -11,7 +11,7 @@
  Target Server Version : 50540
  File Encoding         : 65001
 
- Date: 18/12/2019 23:27:19
+ Date: 19/12/2019 20:02:25
 */
 
 SET NAMES utf8mb4;
@@ -44,7 +44,7 @@ INSERT INTO `itemmenu` VALUES (4, '知乎', '/look', '1', 2, 'iconfont i');
 DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login`  (
   `userId` int(11) UNSIGNED NOT NULL,
-  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `menuId` int(5) NULL DEFAULT NULL,
   PRIMARY KEY (`userId`) USING BTREE
 ) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;

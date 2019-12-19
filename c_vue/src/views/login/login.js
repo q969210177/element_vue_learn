@@ -18,7 +18,19 @@ export default {
           { required: true, message: "请输入密码", trigger: "blur" },
           { min: 3, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
         ]
-      }
+      },
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
+      formLabelWidth: "80px",
+      registereUserStatus: false
     };
   },
   mounted() {
@@ -41,38 +53,20 @@ export default {
           let user = qs.stringify({ user: this.loginForm.userName });
           Axios({
             method: "post",
-            url: "http://localhost//php/login/login.php",
+            url: "http://localhost:8888//datajs/login/login.php",
             data: user
           }).then(res => {
-            if (res.data === 404) {
-              this.$message({
-                message: "没有注册的用户",
-                type: "warning"
-              });
-            } else {
-              let token = "" + new Date().getTime() + res.data.num;
-              token = token.split("");
-              for (let i = 0; i < token.length - 1; i++) {
-                // 如果前一个数 大于 后一个数 就交换两数位置
-                if (-token[i] > -token[i + 1]) {
-                  let temp = token[i];
-                  token[i] = token[i + 1];
-                  token[i + 1] = temp;
-                }
-              }
-              token[4] = res.data.data[0].userID;
-              token = token.join("");
-              sessionStorage.setItem("id", token);
+            if (res.data.code === "0") {
+              let userId = res.data.data[0].userId;
+              console.log(userId);
               this.$message({
                 message: "登录成功",
-                type: "success",
-                showClose: true,
-                onClose: () => {
-                  this.$router.push({
-                    name: "首页",
-                    params: { id: "1", token }
-                  });
-                }
+                type: "success"
+              });
+            } else {
+              this.$message({
+                message: res.data.error,
+                type: "warning"
               });
             }
           });
@@ -80,6 +74,12 @@ export default {
           return false;
         }
       });
+    },
+    registereUser() {
+      this.registereUserStatus = true;
+    },
+    handleClose(done) {
+      console.log(done);
     }
   }
 };

@@ -4,12 +4,12 @@ include "../core/mysql.func.php";
 error_reporting(E_ALL ^ E_NOTICE);
 header("content-type:text/html;charset=utf-8");
 $link = cc();
-$userId = select($link,"login","count(1)")[0]["count(1)"];
-$arr = ["userId"=>$userId,"userName"=>"test","menu"=>2];
+$userId = select($link,"login","count(1)")[0]["count(1)"]+1;
 $userName = $_POST["userName"];
+$arr = ["userId"=>$userId,"userName"=>$userName,"menuId"=>$_POST["menu"]];
 $userNameStatus = select($link,"login","userName","userName = '$userName'");
 if ($userNameStatus) {
-    print_r(json_encode(["code"=>304,"error"=>"该用户名已被注册"]));
+    print_r(json_encode(["code"=>304,"data"=>"该用户名已被注册"]));
 }else{
     $re = tianjia($link,"login",$arr);
    if ($re===1) {
@@ -19,7 +19,4 @@ if ($userNameStatus) {
    }
    
 }
-// print_r($userNameArr);
-// $re = tianjia($link,"login",$arr);
-// print_r($re)
 ?>

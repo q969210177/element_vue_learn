@@ -6,6 +6,7 @@ import "./assets/scss/global_style.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "element-ui/lib/theme-chalk/display.css";
+
 //引入icon图标
 import "../src/assets/css/iconfont.css";
 Vue.config.productionTip = false;

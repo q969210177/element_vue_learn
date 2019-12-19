@@ -13,6 +13,7 @@
     "css-loader": "^3.2.0",
     "echarts": "^4.1.0",
     "element-ui": "^2.13.0",
+    "swiper": "^5.2.1",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
     "vuex": "^3.1.2"
@@ -48,7 +49,7 @@
     "rules": {
       "vue/no-parsing-error": "warning",
       "vue/no-use-v-if-with-v-for": "off",
-      "no-console":"off"
+      "no-console": "off"
     }
   },
   "browserslist": [
