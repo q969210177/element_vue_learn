@@ -13,8 +13,7 @@ export default {
       restaurants: [],
       routerSerach: "",
       navbarSerach: false,
-      src:
-        "https://colinbendell.cloudinary.com/image/upload/c_crop,f_auto,g_auto,h_350,w_400/v1512090971/Wizard-Clap-by-Markus-Magnusson.gif"
+      src: "http://969210177.cn/img/testUser.gif"
     };
   },
   mounted() {
@@ -33,6 +32,9 @@ export default {
         window.open(path);
       } else {
         this.$router.push({ path: path });
+        if (path === "/") {
+          sessionStorage.clear();
+        }
       }
     },
     querySearch(queryString, cb) {

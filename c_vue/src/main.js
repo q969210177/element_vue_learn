@@ -6,7 +6,11 @@ import "./assets/scss/global_style.scss";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "element-ui/lib/theme-chalk/display.css";
-
+import { fetchGet, fetchPost } from "./api/axiosConfing.js";
+import { Msg } from "./api/msg";
+Vue.prototype.$get = fetchGet;
+Vue.prototype.$post = fetchPost;
+Vue.prototype.$alertMessage = Msg;
 //引入icon图标
 import "../src/assets/css/iconfont.css";
 Vue.config.productionTip = false;

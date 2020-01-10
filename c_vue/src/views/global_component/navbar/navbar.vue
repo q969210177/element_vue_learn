@@ -6,7 +6,7 @@
         :span="1"
         class="line_heigth_20  font_size_18  text_center"
       >
-        <div @click="change" class="width_50  box_shandow ">
+        <div class="width_50  box_shandow " @click="change">
           <!-- 'el-icon-caret-left el-icon-caret-right' -->
           <i
             :class="{
@@ -19,12 +19,22 @@
       <!-- :md="{span:5,offset:15}" :lg="{span:5,offset:15}" :xl="{span:5,offset:15}" hidden-md-and-down -->
       <el-col :xs="{ span: 21 }" :span="23">
         <el-row>
-          <el-col class="hidden-sm-and-down text_rigth" :md="{ span: 22 }" :xl="{ span: 22 }" :lg="{ span: 22 }">
+          <el-col
+            class="hidden-sm-and-down text_rigth"
+            :md="{ span: 22 }"
+            :xl="{ span: 22 }"
+            :lg="{ span: 22 }"
+          >
             <!-- <div class="inline_block ">
               <i class="search_icon el-icon-search font_size_24"></i>
             </div> -->
             <div class="inline_block">
-              <el-autocomplete v-model="routerSerach" :fetch-suggestions="querySearch" placeholder="请输入导航名" @select="handleSelect"></el-autocomplete>
+              <el-autocomplete
+                v-model="routerSerach"
+                :fetch-suggestions="querySearch"
+                placeholder="请输入导航名"
+                @select="handleSelect"
+              ></el-autocomplete>
             </div>
             <!-- :popper-append-to-body="$store.state.globalBol.f" @blur="navbarSerach=false" -->
           </el-col>
@@ -40,17 +50,17 @@
             </div>
             <div class="inline_block">
               <el-dropdown
-                @command="navbarDropdown"
                 size="mini"
                 :divided="$store.state.globalBol.t"
                 :hide-on-click="$store.state.globalBol.f"
+                @command="navbarDropdown"
               >
                 <i class="el-icon-caret-bottom"></i>
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item
-                    :command="v.path"
                     v-for="(v, k) in navbarDropdownData"
                     :key="k"
+                    :command="v.path"
                   >
                     {{ v.name }}
                   </el-dropdown-item>

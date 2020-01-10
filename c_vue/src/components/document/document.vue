@@ -1,14 +1,6 @@
 <template>
-  <div>
-    document111
-  </div>
+  <div></div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {}
-  }
-};
-</script>
+<script src="./document.js"></script>
 <style lang="scss" scoped></style>

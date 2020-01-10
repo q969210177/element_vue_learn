@@ -1,7 +1,7 @@
 <template>
   <div class="padding_5">
     <el-row :gutter="50">
-      <el-col :span="6" class="card_father" v-for="(v, k) in cardData" :key="k">
+      <el-col v-for="(v, k) in cardData" :key="k" :span="6" class="card_father">
         <div>
           <el-card shadow="always">
             <el-row>
@@ -23,26 +23,29 @@
       </el-col>
     </el-row>
     <el-row class="margin_top_10">
-        <el-col>
-           <el-card shadow="always" ref="indexLineChart"  style="height:400px"> </el-card>
-        </el-col>
+      <el-col>
+        <el-card ref="indexLineChart" shadow="always" style="height:400px">
+        </el-card>
+      </el-col>
     </el-row>
     <el-row class="margin_top_10">
       <el-col :span="8">
-        <el-card shadow="always" ref="indexPieChart" style="height:400px">1</el-card>
+        <el-card ref="indexPieChart" shadow="always" style="height:400px"
+          >1</el-card
+        >
       </el-col>
       <el-col :span="8">
-        <el-card shadow="always" >2</el-card>
+        <el-card shadow="always">2</el-card>
       </el-col>
       <el-col :span="8">
-        <el-card shadow="always" >3</el-card>
+        <el-card shadow="always">3</el-card>
       </el-col>
     </el-row>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-          <div class="swiper-slide">Slide 1</div>
-          <div class="swiper-slide">Slide 2</div>
-          <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
@@ -51,7 +54,7 @@
       <div class="swiper-button-next"></div>
       <!-- 如果需要滚动条 -->
       <div class="swiper-scrollbar"></div>
-  </div>
+    </div>
   </div>
 </template>
 <script src="./root.js"></script>

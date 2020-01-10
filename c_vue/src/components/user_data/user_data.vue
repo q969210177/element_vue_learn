@@ -4,8 +4,6 @@
   </div>
 </template>
 
-<script >
-export default {};
-</script>
+<script src="./user_data.js"></script>
 
 <style lang="scss" scoped></style>

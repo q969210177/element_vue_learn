@@ -1,72 +1,59 @@
-import Axios from "axios";
-import qs from "qs";
 // import { log } from "util";
 export default {
   data() {
-    //let userVeri = function(rule,value,callback) {};
+    let regular = /^[a-zA-Z0-9]{4,16}$/;
+    let loginUser = (rule, value, callback) => {
+      if (regular.test(value)) {
+        callback();
+      } else {
+        callback(new Error("用户名非法"));
+      }
+    };
     return {
       loginForm: {
         userName: "admin",
         passWord: "admin"
       },
       loginFormRules: {
-        userName: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 4, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
-        ],
+        userName: [{ validator: loginUser, trigger: "blur" }],
         passWord: [
           { required: true, message: "请输入密码", trigger: "blur" },
           { min: 3, max: 16, message: "长度在 3 到 16 个字符", trigger: "blur" }
         ]
       },
-      form: {
-        name: "",
-        region: "",
-        date1: "",
-        date2: "",
-        delivery: false,
-        type: [],
-        resource: "",
-        desc: ""
-      },
-      formLabelWidth: "80px",
+
       registereUserStatus: false
     };
   },
-  mounted() {
-    let token = "" + new Date().getTime();
-    token = token.split("");
-    token.splice(5, 1, "x");
-    token = token.join("");
-    //     var a = 'asdfsdfsdfsadf';
-    // a=a.split('')；  //将a字符串转换成数组
-    // a.splice(1,1,'xxxxx')； //将1这个位置的字符，替换成'xxxxx'. 用的是原生js的splice方法。
-    // console.log(a);   //结果是：
-    // ["a", "xxxxx", "d", "f", "s", "d", "f", "s", "d", "f", "s", "a", "d", "f"]
-
-    // a.join('');  //将数组转换成字符串。  完成。
-  },
+  mounted() {},
   methods: {
+    //登录按钮的事件
     login(formName) {
       this.$refs[formName].validate(valid => {
+        //验证通过才发请求否则就 跳出 return false
         if (valid) {
-          let user = qs.stringify({ user: this.loginForm.userName });
-          Axios({
-            method: "post",
-            url: "http://localhost:8888//datajs/login/login.php",
-            data: user
+          this.$post("/login/login.php", {
+            user: this.loginForm.userName
           }).then(res => {
+            //登录成功调用生成token的方法
+            this.setToken(res.data.data[0].menuId, res.data.sum);
+            //当用户登录成功的时候
             if (res.data.code === "0") {
-              let userId = res.data.data[0].userId;
-              console.log(userId);
-              this.$message({
-                message: "登录成功",
-                type: "success"
-              });
+              this.$alertMessage(
+                {
+                  text: "登录成功",
+                  type: "success",
+                  show: true,
+                  duration: 1000
+                },
+                this.successDo(res.data.data[0].menuId)
+              );
+              //登录验证弹出没有通过就留在当前页``
             } else {
-              this.$message({
-                message: res.data.error,
-                type: "warning"
+              this.$alertMessage({
+                text: res.data.error,
+                type: "error",
+                show: true
               });
             }
           });
@@ -75,11 +62,36 @@ export default {
         }
       });
     },
-    registereUser() {
-      this.registereUserStatus = true;
+    //生成token
+    setToken(menuId, sum) {
+      let token = "" + new Date().getTime() + sum;
+      token = token.split("");
+      for (let i = 0; i < token.length - 1; i++) {
+        // 如果前一个数 大于 后一个数 就交换两数位置
+        if (-token[i] > -token[i + 1]) {
+          let temp = token[i];
+          token[i] = token[i + 1];
+          token[i + 1] = temp;
+        }
+      }
+      token[4] = menuId;
+      token = token.join("");
+      sessionStorage.setItem("token", token);
+      console.log(token);
     },
-    handleClose(done) {
-      console.log(done);
+    //登陆成功跳转页面
+    successDo(id) {
+      setTimeout(() => {
+        this.$store.state.menuId = id;
+        this.$router.push({
+          name: "首页",
+          params: { menuId: id }
+        });
+        this.$store.dispatch("getMenuData", {
+          menuId: id,
+          vm: this
+        });
+      }, 1000);
     }
   }
 };

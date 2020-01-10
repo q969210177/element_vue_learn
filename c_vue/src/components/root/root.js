@@ -1,8 +1,8 @@
 //引入echart实例
 import echarts from "echarts";
 //import Axios from "axios";
-import Swiper from "swiper";
-import "swiper/css/swiper.min.css";
+// import Swiper from "swiper";
+//import "swiper/css/swiper.min.css";
 export default {
   name: "index",
   data() {
@@ -233,21 +233,7 @@ export default {
       ]
     };
   },
-  beforeMount() {
-    // let token = sessionStorage.getItem("id");
-    // if (token !== this.$route.params.token) {
-    //   this.$message({
-    //     message: "登录过期",
-    //     type: "warning",
-    //     showClose: true,
-    //     onClose: () => {
-    //       this.$router.push({
-    //         name: "login"
-    //       });
-    //     }
-    //   });
-    // }
-  },
+  beforeMount() {},
   mounted() {
     //找到dom实例
     let indexLineChart = echarts.init(this.$refs.indexLineChart.$el);
@@ -255,21 +241,6 @@ export default {
     // 注入dom实例;
     indexLineChart.setOption(this.indexLineChartData);
     indexPieChart.setOption(this.indexPieChartData);
-    // Axios({
-    //   method: "post",
-    //   url: "http://localhost/php/menu/menu.php"
-    // }).then(res => {
-    //   console.log(res);
-    // });
-    console.log(Swiper);
   },
-  methods: {
-    // test() {
-    //   this.$router.push({ name: "" });
-    // }
-  }
-  // beforeUpdate(to, from, next) {
-  //   console.log(111);
-  //   next();
-  // }
+  methods: {}
 };

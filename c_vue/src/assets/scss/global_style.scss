@@ -1,5 +1,5 @@
 @for $i from 1 through 100 {
-    .width_#{$i} { width: 1% * $i}
+    .width_#{$i} { width: 1% * $i}  
     .margin_left_#{$i}{margin-left:1px* $i}
     .margin_right_#{$i}{margin-right:1px* $i}
     .margin_top_#{$i}{margin-top:1px* $i}
@@ -39,6 +39,9 @@
   }
   .border_radius_5{
     border-radius: 5px;
+  }
+  .border_radius_10{
+    border-radius: 10px;
   }
   .inline_block{
     display: inline-block;

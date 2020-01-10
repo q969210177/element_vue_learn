@@ -31,10 +31,6 @@
           <el-form-item>
             <el-row>
               <el-col class="text_rigth">
-                <el-button size="mini" type="text" @click="registereUser()">
-                  <div>注册</div>
-                  <div>registered</div>
-                </el-button>
                 <el-button
                   size="mini"
                   type="success"
@@ -53,15 +49,50 @@
         </el-form>
       </el-col>
     </el-row>
-    <!--:wrapper-closable="$store.state.globalBol.f" direction="ltr" 注册{{ loading ? '提交中 ...' : '确 定' }}  @click="$refs.drawer.closeDrawer()"@click="cancelForm"-->
-    <el-drawer
-      ref="drawer"
+    <!-- <el-dialog
+      width="350px"
       title="用户注册"
       :visible.sync="registereUserStatus"
-      direction="rtl"
+      center
+      :show-close="$store.state.globalBol.f"
+      @close="closeRegister('insterUserForm')"
     >
-      <span>1111</span>
-    </el-drawer>
+      <el-form
+        ref="insterUserForm"
+        :rules="registereUserRules"
+        :model="registereUserForm"
+        label-width="80px"
+      >
+        <el-form-item ref="insterUserFrom" label="用户名" prop="name">
+          <el-input v-model="registereUserForm.name" autocomplete="off">
+          </el-input>
+        </el-form-item>
+        <el-form-item class="margin_top_10" label="用户分组" prop="selectUser">
+          <el-select v-model="registereUserForm.selectUser">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+              :disabled="item.disabled"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-row>
+            <el-col class="text_rigth">
+              <el-button @click="closeRegister('insterUserForm')"
+                >取 消</el-button
+              >
+              <el-button type="primary" @click="insterUser('insterUserForm')"
+                >确 定</el-button
+              >
+            </el-col>
+          </el-row>
+        </el-form-item>
+      </el-form>
+    </el-dialog> -->
   </div>
 </template>
 
@@ -77,8 +108,5 @@
 }
 .login_form {
   padding-top: 20vh;
-}
-/deep/.el-form-item {
-  margin-bottom: 12px;
 }
 </style>

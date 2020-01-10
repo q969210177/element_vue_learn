@@ -1,17 +1,26 @@
+/* eslint-disable no-unused-vars */
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { Message } from "element-ui";
 import Login from "../views/login/login.vue";
 import Home from "../views/home/Home.vue";
-//import Store from "vuex";
+import Wel from "../views/welcome/welcome.vue";
+import Store from "@/store/index.js";
+import { mapActions } from "vuex";
 //import { log } from "util";
 
 Vue.use(VueRouter);
-
+let id = sessionStorage.getItem("token");
 const routes = [
   {
-    path: "/",
-    name: "login",
+    path: "/login",
+    name: "登陆",
     component: Login
+  },
+  {
+    path: "/",
+    name: "欢迎页",
+    component: Wel
   },
   {
     path: "/home",
@@ -24,12 +33,6 @@ const routes = [
         path: "/index",
         name: "首页",
         component: () => import("@/components/root/root.vue")
-        // beforeEnter(to, from, next) {
-        //   console.log(to.path);
-        //   next(vm => {
-        //     console.log(vm, 111);
-        //   });
-        // }
       },
       {
         //文档页
@@ -71,23 +74,41 @@ const routes = [
         path: "/personal",
         name: "个人中心",
         component: () => import("@/components/personal/personal.vue")
+      },
+      {
+        path: "/404",
+        name: "404",
+        component: () => import("@/components/404/404.vue")
       }
     ]
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
   }
 ];
 
 const router = new VueRouter({
   routes
 });
-// router.beforeEach((to, from, next) => {
-//   if (to.path !== "/login") {
-//     next();
-//   } else {
-//     console.log(from);
-//     next(false);
-//   }
-// });
+
+router.beforeEach((to, from, next) => {
+  // console.log(to);
+  // console.log(from);
+  // document.title = to.name;
+  // if (id === null) {
+  //   Message.error({
+  //     message: "非法登录 请重新登陆",
+  //     showClose: true,
+  //     duration: 1500
+  //   });
+  //   next("/login");
+  // } else {
+  //   if (id !== null && Store.state.menuData === null) {
+  //     Store.dispatch("getMenuData", {
+  //       menuId: id[4]
+  //     });
+  //   } else {
+  //     next();
+  //   }
+  //   next();
+  // }
+  next();
+});
 export default router;

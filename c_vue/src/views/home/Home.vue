@@ -11,9 +11,9 @@
         <el-main>
           <el-breadcrumb separator="/" class="padding_1 breadcrumb">
             <el-breadcrumb-item
-              :replace="$store.state.globalBol.t"
-              :key="k"
               v-for="(v, k) in $store.state.breadcrumbData"
+              :key="k"
+              :replace="$store.state.globalBol.t"
               :to="{ path: v.path }"
               >{{ v.name }}</el-breadcrumb-item
             >
@@ -27,8 +27,8 @@
 
 <script>
 export default {
-  name: "home",
-  };
+  name: "Home"
+};
 </script>
 <style scoped>
 .navmenu {
