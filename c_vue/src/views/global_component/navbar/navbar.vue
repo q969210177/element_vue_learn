@@ -29,12 +29,10 @@
               <i class="search_icon el-icon-search font_size_24"></i>
             </div> -->
             <div class="inline_block">
-              <el-autocomplete
-                v-model="routerSerach"
-                :fetch-suggestions="querySearch"
-                placeholder="请输入导航名"
-                @select="handleSelect"
-              ></el-autocomplete>
+              <serachInput
+                :serlist="serList"
+                @handSelect="handSelect"
+              ></serachInput>
             </div>
             <!-- :popper-append-to-body="$store.state.globalBol.f" @blur="navbarSerach=false" -->
           </el-col>

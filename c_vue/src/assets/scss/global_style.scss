@@ -28,6 +28,9 @@
   .font_col_666{
     color: #666;
   }
+  .font_col_fff{
+    color: #fff;
+  }
   .box_shandow:active{
     box-shadow:  5px 5px 5px   #888888 inset;
   }
@@ -46,6 +49,6 @@
   .inline_block{
     display: inline-block;
   }
-  .postion_relative{
-    position: relative;
+  .postion_absolute{
+    position: absolute;
   }

@@ -42,17 +42,14 @@ export default {
     };
   },
   methods: {
-    handleClose(done) {
-      console.log(done);
-    },
+    // eslint-disable-next-line no-unused-vars
+    handleClose(done) {},
     cancelForm() {
       this.loading = false;
       this.dialog = false;
       clearTimeout(this.timer);
     },
-    open() {
-      console.log(1111);
-    }
+    open() {}
   },
   beforeRouteEnter(to, from, next) {
     let id = sessionStorage.getItem("token");

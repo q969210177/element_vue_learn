@@ -9,20 +9,20 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b"
-          :router="publicBol.true"
           :collapse="$store.state.collapseMenuCollBol"
         >
+          <!-- 沒有二级菜单 -->
           <el-menu-item
             v-for="(v, k) in $store.state.menuData"
             v-if="v.menuType === '0'"
             :key="k"
             :index="v.menuPath"
-            @click="addHeader(v.menuName, v.menuPath, v.menuUserId)"
+            @click="addHeader(v, true)"
           >
             <i :class="v.menuIcon"></i>
             <span>{{ v.menuName }}</span>
           </el-menu-item>
-
+          <!-- 有二级菜单 -->
           <el-submenu v-else :index="v.menuPath">
             <template slot="title">
               <i :class="v.menuIcon"></i>
@@ -31,10 +31,8 @@
             <el-menu-item
               v-for="(item, index) in v.menuItemMenu"
               :key="index"
-              :index="item.itemMenuPath"
-              @click="
-                addHeader(item.itemMenuName, item.itemMenuPath, item.itemMenuId)
-              "
+              :index="item.itemMenuId"
+              @click="addHeader(item, false)"
             >
               <i :class="item.itemMenuIcon"></i>
               <span>{{ item.itemMenuName }}</span>

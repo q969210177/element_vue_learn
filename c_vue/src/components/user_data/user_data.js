@@ -1,7 +1,6 @@
 export default {
   beforeRouteEnter(to, from, next) {
     let id = sessionStorage.getItem("token");
-    console.log(id[4]);
     if (id[4] !== "1") {
       next(vm => {
         vm.$alertMessage({

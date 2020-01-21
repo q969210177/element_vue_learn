@@ -1,28 +1,20 @@
 <template>
-  <div>
-    <el-row class="img"></el-row>
-  </div>
+  <div class="img"></div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      src: require("@/assets/img/404.png")
-    };
+    return {};
   }
 };
 </script>
 
 <style>
 .img {
-  background: url("../../assets/img/404.png") no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background: url("http://969210177.cn/img/404.jpg");
   background-size: 100% 100%;
-  margin: 0 auto;
-}
-.img::after {
-  content: "";
-  display: block;
-  padding: 20%;
 }
 </style>

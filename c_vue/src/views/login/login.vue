@@ -39,9 +39,9 @@
                   <div>登录</div>
                   <div>Login</div>
                 </el-button>
-                <el-button size="mini">
-                  <div>取消</div>
-                  <div>cancal</div>
+                <el-button size="mini" @click="homepage">
+                  <div>首页</div>
+                  <div>home</div>
                 </el-button>
               </el-col>
             </el-row>

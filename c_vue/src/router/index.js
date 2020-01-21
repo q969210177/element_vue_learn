@@ -23,6 +23,11 @@ const routes = [
     component: Wel
   },
   {
+    path: "/future",
+    name: "对未来说两句吧",
+    component: () => import("@/views/future/future.vue")
+  },
+  {
     path: "/home",
     name: "home",
     component: Home,
@@ -32,55 +37,60 @@ const routes = [
         //首页
         path: "/index",
         name: "首页",
-        component: () => import("@/components/root/root.vue")
+        component: () => import("@/components/Index/Index.vue")
       },
       {
         //文档页
         path: "/document",
-        name: "文档页",
-        component: () => import("@/components/document/document.vue")
+        name: "文档",
+        component: () => import("@/components/Document/Document.vue")
       },
       {
-        //用户管理
-        path: "/user_setting",
-        name: "用户管理",
-        component: () => import("@/components/setting/setting.vue")
-      },
-      {
-        //数据管理
-        path: "/home_data",
-        name: "数据管理",
-        component: () => import("@/components/user_data/user_data.vue")
-      },
-      {
-        //商户管理
-        path: "/shop",
-        name: "商户管理",
-        component: () => import("@/components/shop/shop.vue")
-      },
-      {
-        //知乎
-        path: "/look",
-        name: "知乎",
-        component: () => import("@/components/look/look.vue")
-      },
-      {
-        //字体图标库
-        path: "/home_icon",
-        name: "图标",
-        component: () => import("@/components/icon/icon.vue")
-      },
-      {
-        path: "/personal",
-        name: "个人中心",
-        component: () => import("@/components/personal/personal.vue")
-      },
-      {
-        path: "/404",
-        name: "404",
-        component: () => import("@/components/404/404.vue")
+        path: "/Html/:id",
+        name: "Html",
+        component: () => import("@/components/Html/Html.vue")
+        // beforeEnter: (to, from, next) => {
+        //   // ...
+        //   console.log(11);
+
+        //   next();
+        // }
       }
+      // {
+      //   //数据管理
+      //   path: "/Css",
+      //   name: "Css",
+      //   component: () => import("@/components/user_data/user_data.vue")
+      // },
+      // {
+      //   //商户管理
+      //   path: "/JavaScript",
+      //   name: "JavaScript",
+      //   component: () => import("@/components/shop/shop.vue")
+      // },
+      // {
+      //   //知乎
+      //   path: "/Vue",
+      //   name: "Vue",
+      //   component: () => import("@/components/look/look.vue")
+      // },
+      // {
+      //   //字体图标库
+      //   path: "/home_icon",
+      //   name: "图标",
+      //   component: () => import("@/components/icon/icon.vue")
+      // },
+      // {
+      //   path: "/personal",
+      //   name: "个人中心",
+      //   component: () => import("@/components/personal/personal.vue")
+      // }
     ]
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () => import("@/components/404/404.vue")
   }
 ];
 
@@ -89,26 +99,14 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // console.log(to);
-  // console.log(from);
-  // document.title = to.name;
-  // if (id === null) {
-  //   Message.error({
-  //     message: "非法登录 请重新登陆",
-  //     showClose: true,
-  //     duration: 1500
-  //   });
-  //   next("/login");
-  // } else {
-  //   if (id !== null && Store.state.menuData === null) {
-  //     Store.dispatch("getMenuData", {
-  //       menuId: id[4]
-  //     });
-  //   } else {
-  //     next();
-  //   }
-  //   next();
-  // }
+  document.title = to.name;
+  if (id !== null && Store.state.menuData === null) {
+    Store.dispatch("getMenuData", {
+      menuId: id[4]
+    });
+  } else {
+    next();
+  }
   next();
 });
 export default router;

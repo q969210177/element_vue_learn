@@ -81,17 +81,18 @@ export default {
     },
     //登陆成功跳转页面
     successDo(id) {
-      setTimeout(() => {
-        this.$store.state.menuId = id;
-        this.$router.push({
-          name: "首页",
-          params: { menuId: id }
-        });
-        this.$store.dispatch("getMenuData", {
-          menuId: id,
-          vm: this
-        });
-      }, 1000);
+      this.$store.state.menuId = id;
+      this.$router.push({
+        name: "首页",
+        params: { menuId: id }
+      });
+      this.$store.dispatch("getMenuData", {
+        menuId: id,
+        vm: this
+      });
+    },
+    homepage() {
+      this.$router.push({ path: "/" });
     }
   }
 };

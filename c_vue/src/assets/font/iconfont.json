@@ -13,20 +13,6 @@
       "unicode_decimal": 58880
     },
     {
-      "icon_id": "14727",
-      "name": "社区",
-      "font_class": "shequ",
-      "unicode": "e602",
-      "unicode_decimal": 58882
-    },
-    {
-      "icon_id": "31098",
-      "name": "部门",
-      "font_class": "bumen",
-      "unicode": "e605",
-      "unicode_decimal": 58885
-    },
-    {
       "icon_id": "113188",
       "name": "msg",
       "font_class": "msg",
@@ -41,13 +27,6 @@
       "unicode_decimal": 58889
     },
     {
-      "icon_id": "258564",
-      "name": "qq",
-      "font_class": "tubiao215",
-      "unicode": "e612",
-      "unicode_decimal": 58898
-    },
-    {
       "icon_id": "433867",
       "name": "error_outline",
       "font_class": "erroroutline",
@@ -60,13 +39,6 @@
       "font_class": "iconfontshanchu",
       "unicode": "e61e",
       "unicode_decimal": 58910
-    },
-    {
-      "icon_id": "774517",
-      "name": "系统",
-      "font_class": "xitong",
-      "unicode": "e6a5",
-      "unicode_decimal": 59045
     },
     {
       "icon_id": "836349",
@@ -167,18 +139,18 @@
       "unicode_decimal": 59198
     },
     {
+      "icon_id": "1467357",
+      "name": "html5",
+      "font_class": "html",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
       "icon_id": "1490622",
       "name": "菜单",
       "font_class": "caidan",
       "unicode": "e64d",
       "unicode_decimal": 58957
-    },
-    {
-      "icon_id": "1493313",
-      "name": "部门管理",
-      "font_class": "web-icon-",
-      "unicode": "e6b6",
-      "unicode_decimal": 59062
     },
     {
       "icon_id": "1567509",
@@ -237,6 +209,20 @@
       "unicode_decimal": 58881
     },
     {
+      "icon_id": "3876406",
+      "name": "css3",
+      "font_class": "css",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "4187348",
+      "name": "002-java-script",
+      "font_class": "-java-script",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
       "icon_id": "4380879",
       "name": "菜单",
       "font_class": "menu",
@@ -277,13 +263,6 @@
       "font_class": "youjian",
       "unicode": "e625",
       "unicode_decimal": 58917
-    },
-    {
-      "icon_id": "5700815",
-      "name": "money",
-      "font_class": "money",
-      "unicode": "e607",
-      "unicode_decimal": 58887
     },
     {
       "icon_id": "5700817",
@@ -363,13 +342,6 @@
       "unicode_decimal": 59176
     },
     {
-      "icon_id": "7171125",
-      "name": "部门管理",
-      "font_class": "bumenguanli",
-      "unicode": "e621",
-      "unicode_decimal": 58913
-    },
-    {
       "icon_id": "7550230",
       "name": "上传",
       "font_class": "shangchuan",
@@ -396,20 +368,6 @@
       "font_class": "document1",
       "unicode": "e604",
       "unicode_decimal": 58884
-    },
-    {
-      "icon_id": "8765212",
-      "name": "菜单-3",
-      "font_class": "caidan-",
-      "unicode": "e62e",
-      "unicode_decimal": 58926
-    },
-    {
-      "icon_id": "8765261",
-      "name": "pdf",
-      "font_class": "pdf1",
-      "unicode": "e63f",
-      "unicode_decimal": 58943
     },
     {
       "icon_id": "8765262",
@@ -445,6 +403,13 @@
       "font_class": "zip",
       "unicode": "e641",
       "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "10918187",
+      "name": "vuejs-fill",
+      "font_class": "vuejs-fill",
+      "unicode": "e774",
+      "unicode_decimal": 59252
     }
   ]
 }
