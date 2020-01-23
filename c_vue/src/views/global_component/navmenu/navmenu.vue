@@ -3,6 +3,7 @@
     <el-row>
       <!-- :collapse="$store.state.menuCollBol":router="publicBol.true" :unique-opened="publicBol.true"  :router="publicBol.true"-->
       <el-col>
+        <!-- 擦边菜单栏 -->
         <el-menu
           :unique-opened="publicBol.true"
           :default-active="defaultPath"

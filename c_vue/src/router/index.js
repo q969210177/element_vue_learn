@@ -55,13 +55,13 @@ const routes = [
 
         //   next();
         // }
-      }
-      // {
-      //   //数据管理
-      //   path: "/Css",
-      //   name: "Css",
-      //   component: () => import("@/components/user_data/user_data.vue")
-      // },
+      },
+      {
+        //数据管理
+        path: "/ZhiHu",
+        name: "知乎",
+        component: () => import("@/components/ZhiHu/ZhiHu.vue")
+      },
       // {
       //   //商户管理
       //   path: "/JavaScript",
@@ -80,11 +80,11 @@ const routes = [
       //   name: "图标",
       //   component: () => import("@/components/icon/icon.vue")
       // },
-      // {
-      //   path: "/personal",
-      //   name: "个人中心",
-      //   component: () => import("@/components/personal/personal.vue")
-      // }
+      {
+        path: "/personal",
+        name: "个人中心",
+        component: () => import("@/components/personal/personal.vue")
+      }
     ]
   },
   {

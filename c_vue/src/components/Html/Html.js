@@ -1,23 +1,16 @@
 export default {
   data() {
     return {
-      test: "",
       articleDataList: ""
     };
   },
-  mounted() {
-    //let a = this.$store.state.NavigationListId;
-    // this.test = this.$store.state.NavigationListId ;
-
-    this.getNavigationList(this.$route.params.id);
+  beforeMount() {
+    this.getNavigationList(this.$store.state.NavigationListId);
   },
+  mounted() {},
   methods: {
-    changeInput() {
-      let dom = document.getElementById("aaaa").value;
-      console.log(dom);
-    },
     getNavigationList(id) {
-      this.$get("articlelist/articlelist.php", {
+      this.$get("/articlelist/articlelist.php", {
         articleId: id
       }).then(res => {
         this.articleDataList = res.data;
@@ -27,7 +20,7 @@ export default {
   },
   watch: {
     $route() {
-      this.getNavigationList(this.$route.params.id);
+      this.getNavigationList(this.$store.state.NavigationListId);
     }
   }
 };

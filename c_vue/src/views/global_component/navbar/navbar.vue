@@ -44,7 +44,11 @@
           >
             <!-- 最后的跳舞阶段 -->
             <div class="inline_block">
-              <el-image :src="src" class="img_size margin_top_3"> </el-image>
+              <el-image
+                :src="$store.state.userData[0].userImgAvatar"
+                class="img_size margin_top_3"
+              >
+              </el-image>
             </div>
             <div class="inline_block">
               <el-dropdown

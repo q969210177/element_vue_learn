@@ -8,8 +8,10 @@ import "element-ui/lib/theme-chalk/index.css";
 import "element-ui/lib/theme-chalk/display.css";
 import { fetchGet, fetchPost } from "./api/axiosConfing.js";
 import { Msg } from "./api/msg";
+//封装的axios方法注入原型
 Vue.prototype.$get = fetchGet;
 Vue.prototype.$post = fetchPost;
+//注册全局模态框
 Vue.prototype.$alertMessage = Msg;
 //引入icon图标
 import "../src/assets/css/iconfont.css";
@@ -21,6 +23,7 @@ router.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);
 };
 Vue.config.productionTip = false;
+//注册全局导航栏和菜单栏
 import navMenu from "./views/global_component/navmenu/navmenu.vue";
 import navBar from "./views/global_component/navbar/navbar.vue";
 Vue.component("navMenu", navMenu);

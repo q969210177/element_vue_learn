@@ -8,8 +8,7 @@ export default {
         true: true,
         false: false
       },
-      clickBol: false,
-      defaultPath: window.location.hash.substring(1)
+      clickBol: false
     };
   },
   methods: {
@@ -40,6 +39,7 @@ export default {
         });
       }
       this.$store.state.breadcrumbData[0] = storeHeader;
+      this.$store.state.NavigationListId = item.itemMenuId;
       // this.$router.push({
       //   path: item.itemMenuId ? item.itemMenuPath : item.menuPath,
       //   query: { id: item.itemMenuId }

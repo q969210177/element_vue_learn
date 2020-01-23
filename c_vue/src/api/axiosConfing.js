@@ -1,3 +1,4 @@
+//请求的全局配置
 // import Vue from "vue";
 import axios from "axios";
 import qs from "qs";

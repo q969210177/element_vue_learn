@@ -3,7 +3,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import { fetchPost, fetchGet } from "@/api/axiosConfing";
 Vue.use(Vuex);
-let menuData = sessionStorage.getItem("data");
+let storeFile = sessionStorage.getItem("store");
 export default new Vuex.Store({
   state: {
     //全局状态
@@ -28,19 +28,19 @@ export default new Vuex.Store({
   actions: {
     getMenuData(context, vm) {
       let menuId = { menuId: vm.menuId };
-      if (menuData === null) {
+      fetchGet("/user/userData.php", menuId).then(res => {
+        context.state.userData = res.data;
+        console.log(res);
+        console.log(context.state.userData);
+      });
+      if (storeFile === null) {
         fetchGet("/userMenu/userMenu.php", menuId).then(res => {
           context.state.menuData = res.data;
           context.state.menuId = vm.menuId;
-          let menu = JSON.stringify(res.data);
-          sessionStorage.setItem("data", menu);
         });
       } else {
-        context.state.menuData = JSON.parse(menuData);
+        context.state.menuData = JSON.parse(storeFile).menuData;
       }
-    },
-    getNavigationList(context, vm) {
-      console.log(context, vm);
     }
   }
 });
