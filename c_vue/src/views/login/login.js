@@ -77,7 +77,6 @@ export default {
       token[4] = menuId;
       token = token.join("");
       sessionStorage.setItem("token", token);
-      console.log(token);
     },
     //登陆成功跳转页面
     successDo(id) {
@@ -92,6 +91,7 @@ export default {
       });
     },
     homepage() {
+      //点击首页 就回到首页 类似返回按钮
       this.$router.push({ path: "/" });
     }
   }

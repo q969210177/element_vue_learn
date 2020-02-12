@@ -54,13 +54,14 @@ export default {
         }
       }
     },
+    //搜索框的搜索跳转路由
     handSelect(item) {
       item.name = item.value;
       this.$store.state.breadcrumbData[1] = item;
       this.$router.push({ path: item.path });
     }
   },
-  //自定义指令
+  //自定义指令 默认进行一次操作
   directives: {
     focus: {
       // directive definition

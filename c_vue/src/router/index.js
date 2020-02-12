@@ -28,6 +28,12 @@ const routes = [
     component: () => import("@/views/future/future.vue")
   },
   {
+    //字体图标库
+    path: "/common",
+    name: "常用药品查询",
+    component: () => import("@/components/Common/Common.vue")
+  },
+  {
     path: "/home",
     name: "home",
     component: Home,
@@ -49,12 +55,6 @@ const routes = [
         path: "/Html/:id",
         name: "Html",
         component: () => import("@/components/Html/Html.vue")
-        // beforeEnter: (to, from, next) => {
-        //   // ...
-        //   console.log(11);
-
-        //   next();
-        // }
       },
       {
         //数据管理
@@ -62,24 +62,7 @@ const routes = [
         name: "知乎",
         component: () => import("@/components/ZhiHu/ZhiHu.vue")
       },
-      // {
-      //   //商户管理
-      //   path: "/JavaScript",
-      //   name: "JavaScript",
-      //   component: () => import("@/components/shop/shop.vue")
-      // },
-      // {
-      //   //知乎
-      //   path: "/Vue",
-      //   name: "Vue",
-      //   component: () => import("@/components/look/look.vue")
-      // },
-      // {
-      //   //字体图标库
-      //   path: "/home_icon",
-      //   name: "图标",
-      //   component: () => import("@/components/icon/icon.vue")
-      // },
+
       {
         path: "/personal",
         name: "个人中心",

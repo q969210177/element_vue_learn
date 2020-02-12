@@ -25,6 +25,7 @@ export default {
     this.restaurants = this.loadAll();
   },
   methods: {
+    //element封装的组件事件 传入返回的数据然后进行会掉
     serachList(queryString, callback) {
       var restaurants = this.restaurants;
       var results = queryString
@@ -44,6 +45,7 @@ export default {
     loadAll() {
       return this.serlist;
     },
+    //时间传递 注册一个自定义事件
     handSelect(item) {
       this.$emit("handSelect", item);
       //this.$router.push({ path: item.path });
