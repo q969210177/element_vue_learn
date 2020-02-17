@@ -13,46 +13,46 @@
     .font_size_#{$i}{font-size: 1px*$i;}
     .font_weight_#{$i}{font-weight:10*$i ;}
   }
-  .border_red{
+  //字颜色方法
+$colorName:(fff,666,ccc);
+$color:(#fff,#666,#ccc);
+@for $i from 1 through length($colorName) {
+   .font_col_#{nth($colorName,$i)}{
+       color:nth($color,$i) ;
+   }
+}
+$textAlgin:(left,center,right);
+@each $name in $textAlgin {
+  .text_#{$name}{
+    text-align: $name;
+  }
+}
+//重写A标签的默认样式
+a{
+  @extend .font_size_14,.font_col_ccc;
+  &:hover{
+    @extend .font_col_666
+  }
+}
+.border_red{
     border: 1px solid red;
-  }
-  .text_center{
-    text-align: center;
-  }
-  .text_rigth{
-    text-align: right;
-  }
-  .text_left{
-    text-align: left;
-  }
-  .font_col_666{
-    color: #666;
-  }
-  .font_col_fff{
-    color: #fff;
-  }
-  .box_shandow:active{
+}
+.box_shandow:active{
     box-shadow:  5px 5px 5px   #888888 inset;
-  }
-  .vertical_align_middle{
-    vertical-align: middle;
-  }
-  .vertical_align_bottom{
-    vertical-align: text-bottom;
-  }
-  .border_radius_5{
+} 
+.border_radius_5{
     border-radius: 5px;
-  }
-  .border_radius_10{
+}
+.border_radius_10{
     border-radius: 10px;
-  }
-  .inline_block{
+}
+.inline_block{
     display: inline-block;
-  }
-  .postion_absolute{
+}
+.postion_absolute{
     position: absolute;
-  }
-  .particleButton {
+}
+.particleButton {
     display: inline-block;
     padding: 1em 2em;
     background-color: #ff0081;
@@ -62,13 +62,12 @@
     border: none;
     cursor: pointer;
     position: relative;
-    box-shadow: 0 2px 25px rgba(233, 30, 99, 0.5);
     outline: 0;
     transition: transform ease-in 0.1s, background-color ease-in 0.1s,
       box-shadow ease-in 0.25s;
-  }
+}
   
-  .particleButton::before {
+.particleButton::before {
     position: absolute;
     content: "";
     left: -2em;
@@ -101,18 +100,17 @@
       65% 30%, 80% 32%, 15% 60%, 83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%,
       64% 70%, 80% 71%;
     animation: bubbles ease-in-out 0.75s forwards;
-  }
-  
-  .particleButton:active {
+}  
+.particleButton:active {
     transform: scale(0.95);
     // background-color: #f3037c;
     box-shadow: 0 2px 25px rgba(233, 30, 99, 0.5);
-  }
-  .particleButton:active::before {
+}
+.particleButton:active::before {
     animation: none;
     background-size: 0;
-  }
-  @keyframes bubbles {
+}
+@keyframes bubbles {
     0% {
       background-position: 18% 40%, 20% 31%, 30% 30%, 40% 30%, 50% 30%, 57% 30%,
         65% 30%, 80% 32%, 15% 60%, 83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%,
@@ -120,7 +118,7 @@
     }
     50% {
       background-position: 10% 44%, 0% 20%, 15% 5%, 30% 0%, 42% 0%, 62% -2%,
-        75% 0%, 95% -2%, 0% 80%, 95% 55%, 7% 100%, 24% 100%, 41% 100%, 55% 95%,
+        75% 0%, 95% -2%, 0% 80%, 95% 55%, 7% 100%, 24% 100%, 41% 100%, 55% 95%, 
         68% 96%, 95% 100%;
     }
     100% {
@@ -129,4 +127,4 @@
         100% 100%;
       background-size: 0% 0%;
     }
-  }
+}

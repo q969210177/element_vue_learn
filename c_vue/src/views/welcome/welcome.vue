@@ -1,41 +1,50 @@
 <template>
-  <div id="fa" class="fa">
-    <el-row class="serachInput text_center">
+  <div class="fa" id="fa">
+    <div class="text_center width_100 fa_input margin_top_100">
       <serachInput :serlist="serList" @handSelect="handSelect"></serachInput>
-      {{ test }}
-    </el-row>
-    <el-row class="welBar postion_absolute text_center width_100">
-      <el-col
+    </div>
+
+    <div class="wei_link">
+      <a
+        href="JavaScript:void(0)"
         v-for="(v, k) in serList"
         :key="k"
-        class="padding_left_5"
-        :span="v.span"
+        @click="handSelect(v)"
+        class="wei_link"
       >
-        <el-link type="info" @click="handSelect(v)">{{ v.value }}</el-link>
-      </el-col>
-      <el-col class="font_col_fff margin_top_15 ">
+        {{ v.value }}
+      </a>
+      <div class=" width_100 font_col_fff indicate text_center">
         如有侵权 请联系邮件到 q969210177@gmail.com
-      </el-col>
-    </el-row>
+      </div>
+    </div>
   </div>
 </template>
 
 <script src="./welcome.js"></script>
 
-<style>
+<style lang="scss" scoped>
 .fa {
   width: 100vw;
   height: 100vh;
   /* background: url("../../assets/img/welBgImg.jpg"); */
-  position: relative;
+  /* 初始弹性盒模型 */
+  display: flex;
+  /* 设置主轴的排列方式 默认值是row 水平排列*/
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  /* 默认轴的对齐方式 X轴水平 Y轴垂直 */
+  justify-content: center;
+  /* 主轴对应的轴的对齐方式 默认是Y轴 */
 }
-.serachInput {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.fa_input {
+  align-self: flex-end;
 }
-.welBar {
-  top: 80%;
+.wei_link {
+  margin-left: 20px;
+  align-self: flex-end;
+}
+.indicate {
+  margin-bottom: 100px;
 }
 </style>
