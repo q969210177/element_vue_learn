@@ -11,8 +11,8 @@ export default {
     };
     return {
       loginForm: {
-        userName: "admin",
-        passWord: "admin"
+        userName: "",
+        passWord: ""
       },
       loginFormRules: {
         userName: [{ validator: loginUser, trigger: "blur" }],
@@ -39,6 +39,8 @@ export default {
             this.setToken(res.data.data[0].menuId, res.data.sum);
             //当用户登录成功的时候
             if (res.data.code === "0") {
+              console.log(res.data.data[0].menuId);
+
               this.$alertMessage(
                 {
                   text: "登录成功",
@@ -48,6 +50,8 @@ export default {
                 },
                 this.successDo(res.data.data[0].menuId)
               );
+              this.$store.state.userImgSrc = res.data.data[0].userImg;
+
               //登录验证弹出没有通过就留在当前页``
             } else {
               this.$alertMessage({
@@ -82,7 +86,7 @@ export default {
     successDo(id) {
       this.$store.state.menuId = id;
       this.$router.push({
-        name: "首页",
+        name: "home",
         params: { menuId: id }
       });
       this.$store.dispatch("getMenuData", {

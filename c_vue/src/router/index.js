@@ -5,7 +5,7 @@ import { Message } from "element-ui";
 import Login from "../views/login/login.vue";
 import Home from "../views/home/Home.vue";
 import Wel from "../views/welcome/welcome.vue";
-import Store from "@/store/index.js";
+import Store from "../store/index.js";
 import { mapActions } from "vuex";
 //import { log } from "util";
 
@@ -28,10 +28,9 @@ const routes = [
     component: () => import("@/views/future/future.vue")
   },
   {
-    //字体图标库
     path: "/common",
-    name: "常用药品查询",
-    component: () => import("@/components/Common/Common.vue")
+    name: "社区团购统计",
+    component: () => import("@/views/Common/Common.vue")
   },
   {
     path: "/home",
@@ -43,37 +42,48 @@ const routes = [
         //首页
         path: "/index",
         name: "首页",
-        component: () => import("@/components/Index/Index.vue")
+        component: () => import("@/views/Index/Index.vue")
       },
       {
         //文档页
         path: "/document",
         name: "文档",
-        component: () => import("@/components/Document/Document.vue")
+        component: () => import("@/views/Document/Document.vue")
       },
       {
-        path: "/Html/:id",
-        name: "Html",
-        component: () => import("@/components/Html/Html.vue")
+        path: "/nanGuoUser",
+        name: "用户管理",
+        component: () => import("@/views/nanGuoUser/nanGuoUser.vue")
       },
       {
-        //数据管理
-        path: "/ZhiHu",
-        name: "知乎",
-        component: () => import("@/components/ZhiHu/ZhiHu.vue")
+        //菜单管理
+        path: "/groupBuyMenu",
+        name: "菜单管理",
+        component: () => import("@/views/nanGuoMenu/nanGuoMenu.vue")
       },
-
+      {
+        //团购编辑
+        path: "/groupBuyChange",
+        name: "团购编辑",
+        component: () => import("@/views/groupBuy/groupBuy.vue")
+      },
+      {
+        //团购编辑
+        path: "/Vue",
+        name: "Vue",
+        component: () => import("@/views/Vue/Vue.vue")
+      },
       {
         path: "/personal",
         name: "个人中心",
-        component: () => import("@/components/personal/personal.vue")
+        component: () => import("@/views/personal/personal.vue")
       }
     ]
   },
   {
     path: "/404",
     name: "404",
-    component: () => import("@/components/404/404.vue")
+    component: () => import("@/views/404/404.vue")
   }
 ];
 
@@ -83,13 +93,13 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.name;
-  if (id !== null && Store.state.menuData === null) {
-    Store.dispatch("getMenuData", {
-      menuId: id[4]
-    });
-  } else {
-    next();
-  }
+  // if (id !== null && Store.state.menuData === null) {
+  //   Store.dispatch("getMenuData", {
+  //     menuId: id[4]
+  //   });
+  // } else {
+  //   next();
+  // }
   next();
 });
 export default router;

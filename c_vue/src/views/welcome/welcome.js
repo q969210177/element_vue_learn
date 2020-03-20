@@ -1,5 +1,5 @@
 //引入组件 搜索框//多个组件封装公用
-import serachInput from "../global_component/selectInput/selectInput.vue";
+import serachInput from "../../components/global_component/selectInput/selectInput.vue";
 export default {
   components: {
     serachInput: serachInput
@@ -7,21 +7,20 @@ export default {
   data() {
     return {
       serList: [
-        { value: "后台模板首页", path: "/login", span: 6 },
+        { value: "后台模板首页", path: "/login", span: 8 },
         {
           value: "GitHub地址",
           path: "https://github.com/q969210177/element_vue_learn",
-          span: 6
+          span: 8
         },
-        {
-          value: "对话未来",
-          path: "/future",
-          span: 6
-        },
-        { value: "常用药品说明", path: "/common", span: 6 }
+        // {
+        //   value: "对话未来",
+        //   path: "/future",
+        //   span:8
+        // },
+        { value: "社区团购统计", path: "/common", span: 8 }
       ],
-      backgroundImgSrc: "",
-      test: ""
+      backgroundImgSrc: ""
     };
   },
 

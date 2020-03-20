@@ -20,7 +20,11 @@ $color:(#fff,#666,#ccc);
    .font_col_#{nth($colorName,$i)}{
        color:nth($color,$i) ;
    }
+   .bg_col_#{nth($colorName,$i)}{
+    background-color:nth($color,$i) ;
 }
+}
+//水平对齐
 $textAlgin:(left,center,right);
 @each $name in $textAlgin {
   .text_#{$name}{
@@ -33,9 +37,6 @@ a{
   &:hover{
     @extend .font_col_666
   }
-}
-.border_red{
-    border: 1px solid red;
 }
 .box_shandow:active{
     box-shadow:  5px 5px 5px   #888888 inset;

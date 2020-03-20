@@ -1,0 +1,25 @@
+#MyHomeland {
+    width: 100vw;
+    height: 100vh;
+    // background: url("http://969210177.cn/img/MyHomeland.jpg") no-repeat;
+    background-size: 100% 100%;
+    overflow-y:hidden;
+}
+.comFather{
+    margin: 0px auto;
+}
+
+.border_ccc{
+    border: 1px solid #ccc;
+}
+.border_bottom_ccc{
+    border-bottom: 1px solid #ccc;
+}
+/deep/.el-dialog__header{
+    @extend .border_bottom_ccc;
+}
+/deep/.el-dialog__body{
+    @extend .border_bottom_ccc
+}
+
+

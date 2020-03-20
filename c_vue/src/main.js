@@ -24,8 +24,8 @@ router.push = function push(location) {
 };
 Vue.config.productionTip = false;
 //注册全局导航栏和菜单栏
-import navMenu from "./views/global_component/navmenu/navmenu.vue";
-import navBar from "./views/global_component/navbar/navbar.vue";
+import navMenu from "./components/global_component/navmenu/navmenu.vue";
+import navBar from "./components/global_component/navbar/navbar.vue";
 Vue.component("navMenu", navMenu);
 Vue.component("navBar", navBar);
 new Vue({

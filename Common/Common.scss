@@ -1,0 +1,32 @@
+#MyHomeland {
+    width: 100vw;
+    height: 100vh;
+    // background: url("http://969210177.cn/img/MyHomeland.jpg") no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    
+}
+
+/deep/ input:focus{
+    border: 1px solid #ccc;
+}
+$flexItemName:("flex-start","flex-end","center","baseline","stretch");
+@for $i from 1 through length($flexItemName) {
+    .alignSelf_#{nth($flexItemName,$i)}{
+        align-self:nth($flexItemName,$i);
+    }
+}    
+// /deep/ .el-dialog__header{
+//     border-bottom: 1px solid #ccc;
+// }
+// .romor_item_box_1{
+//     align-self: center;
+
+// }
+// .romor_item_box_1{
+//     @extend .flex-basis_100;
+//    
+// }
+
