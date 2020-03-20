@@ -103,7 +103,7 @@ include "config.php";
 	   $keys = join(",",array_keys($arr));
 	   $vals = "'" .join("','",array_values($arr))."'";
 	   
-	  $sql = "insert $tbName($keys) values($vals)";
+	  $sql = "INSERT INTO $tbName($keys) values($vals)";
 	
 	 //echo $sql;
 	
@@ -149,56 +149,35 @@ include "config.php";
    
    // 多表  复杂 语句 
    // 执行所有语句
-    //  function query($link,$sql){
-     	
-	// 	//"select update |delete insert"
-		
-	// 	//  $type = ["update","select","delete","insert"];
+      function query($link,$sql){
+		  $type = ["update","select","delete","insert"];
 		 
-	// 	//  $header = substr(trim($sql), 0,6);
+		  $header = substr(trim($sql), 0,6);
 		 
-		 
-	// 	//    if(in_array($header, $type)){
+		    if(in_array($header, $type)){
 		   	
-	// 	// 	   if(strtolower($header) == "select"){
-	// 	// 	   	   // 查询 语句
+		 	   if(strtolower($header) == "select"){
+		 	   	    //查询 语句
 				
-	// 	// 		   $result= mysqli_query($link, $sql) or die("查询语句拼写有误!!");
+		 		   $result= mysqli_query($link, $sql) or die("查询语句拼写有误!!");
 				
-	// 	// 		    return mysqli_fetch_all($result,MYSQLI_ASSOC);
-	// 	// 	   }else{
-	// 	// 	   	   // 增删改
+		 		    return mysqli_fetch_all($result,MYSQLI_ASSOC);
+		 	   }else{
+		 	   	   // 增删改
 				
-	// 	// 		     mysqli_query($link, $sql);
+		 		     mysqli_query($link, $sql);
 				
-	// 	// 		    return  mysqli_affected_rows($link);
-	// 	// 	   }
+		 		    return  mysqli_affected_rows($link);
+		 	   }
 			   
-			   
-			
-	// 	//    }else{
+	    }else{
 		   	
-	// 	// 	  exit("语句非法");
-	// 	   }
+	 	  exit("语句非法");
+	 	   }
 		 
-	// 	// echo $header;
+	echo $header;
 		 
 		
 		
 		
-    //  }
-	 
-	
-	
-	//$link = conn();
-	
-	//$re= query($link, "select * from class c join stus s on c.cid = s.cid");
-   
-   //print_r($re);
-   
-   // save($link,"userinfo",$arr,"xxxx");
-   
-   //add($link, "userinfo", $arr);
-   
-   //del("userinfo");
-  // select("userinfo","userName,id",null,"cid","id asc","0,10");
+  }

@@ -6,8 +6,8 @@ header("content-type:text/html;charset=utf-8");
 //链接mysql
 $link = cc();
 //获取用户id
-// $menuId = $_GET["menuId"];
-$menuId = 2;
+ $menuId = $_GET["menuId"];
+
 //获取当前用户id下面的菜单id
 $menuIdData = select($link,"user_menuid","*","menuID = '$menuId'")[0];
 //如果获取到了就把id数组的第一条和最后一条删除只留 中间的关联字段

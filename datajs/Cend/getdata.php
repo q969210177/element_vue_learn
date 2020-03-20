@@ -34,7 +34,7 @@ if ($status != null ) { //判断是哪个页面
 } 
 
     
-
+   
     print_r(json_encode($arr));
     
 

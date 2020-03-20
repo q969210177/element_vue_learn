@@ -6,7 +6,7 @@ header("content-type:text/html;charset=utf-8");
 $link = cc();
 $serach = $_GET["serachText"];
 //select($link, "zhuhu_title", "*", "title like '%$keyword%' ");
-$rumorData = select($link,"rumor","*","rumorTitle like '%$serach%'");
+$rumorData = select($link,"rumor","*","rumorName like '%$serach%'");
 if ($rumorData) {
     print_r(json_encode(["code"=>"0","data"=>$rumorData]));
 } else {
