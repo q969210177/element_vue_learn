@@ -117,11 +117,6 @@ export default {
     nanGuoSumit(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          //     this.$post("nanGuo/test.php", {
-          //       userData: this.form
-          //     }).then(res => {
-          //       console.log(res);
-          //     });
           this.$post("nanGuo/nanGuoUserUpdata.php", {
             userData: {
               groupBuyName: this.form.groupBuyName,
@@ -134,15 +129,19 @@ export default {
             }
           }).then(res => {
             if (res.data.code !== 0) {
-              this.commonDialog.state = true;
-              this.commonDialog.comDialogImgSrc = require("../../assets/img/error.png");
-              this.commonDialog.comDialogTitle = "提交失败";
-              this.commonDialog.comDialogPrompt = res.data.msg;
+              this.commonDialog = {
+                state: true,
+                comDialogImgSrc: require("../../assets/img/error.png"),
+                comDialogTitle: "提交失败",
+                comDialogPrompt: res.data.msg
+              };
             } else {
-              this.commonDialog.state = true;
-              this.commonDialog.comDialogImgSrc = require("../../assets/img/sucess.png");
-              this.commonDialog.comDialogTitle = "提交成功";
-              this.commonDialog.comDialogPrompt = res.data.msg;
+              this.commonDialog = {
+                state: true,
+                comDialogImgSrc: require("../../assets/img/sucess.png"),
+                comDialogTitle: "提交成功",
+                comDialogPrompt: res.data.msg
+              };
             }
           });
         } else {
@@ -167,14 +166,14 @@ export default {
       } else {
         //已选中的情况
         this.form.sizeNum[k] = 1;
-        this.form.userVegMenu[k] = { id: k, num: 1 };
+        this.form.userVegMenu[k] = { id: v.groupbuyId - 1, num: 1 };
         this.tolPicArr[k] = 1 * v.pic;
         this.buyTotaPic(this.tolPicArr);
       }
     },
     //当数值改变的时候
     vegMenuChange(nums, v, k) {
-      this.form.userVegMenu[k] = { id: k, num: nums };
+      this.form.userVegMenu[k] = { id: v.groupbuyId - 1, num: nums };
       this.tolPicArr[k] = nums * v.pic;
       this.buyTotaPic(this.tolPicArr);
     },

@@ -1,6 +1,7 @@
 import { Message } from "element-ui";
 
 export function Msg(option, fn = null) {
+  // console.log(option);
   Message({
     message: option.text,
     type: option.type ? option.type : "success",

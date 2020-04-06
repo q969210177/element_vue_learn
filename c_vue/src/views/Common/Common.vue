@@ -99,14 +99,12 @@
       width="100%"
       fullscreen
     >
-      <div class="padding_5">
-        <img
-          width="100%"
-          :src="commonDialog.comDialogImgSrc"
-          alt=""
-          srcset=""
-        />
-        <div class="text_center font_size_22 margin_top_5">
+      <div class="text_center">
+        <div class="padding_top_5 padding_bottom_5">
+          <img width="300px" height="" :src="commonDialog.comDialogImgSrc" />
+        </div>
+
+        <div class=" font_size_22 margin_top_5">
           {{ commonDialog.comDialogPrompt }}
         </div>
       </div>

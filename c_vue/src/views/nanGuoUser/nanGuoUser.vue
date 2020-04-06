@@ -7,29 +7,42 @@
           v-for="(v, k) in tableProp"
           :prop="v.prop"
           :label="v.label"
-          min-width="auto"
           :key="k"
-          sortable
+          :min-width="v.width"
         >
-          <!--  tableData[k][tableProp[k].prop] -->
           <template slot-scope="scope">
             <span v-html="changeDataCol(scope.row, v.prop)"></span>
           </template>
         </el-table-column>
-        <el-table-column align="center">
+        <el-table-column align="center" min-width="auto">
           <template slot="header" slot-scope="scope">
             <el-input
               v-model="search"
               size="mini"
               placeholder="输入关键字搜索"
-              @blur="tableSearchIput(scope)"
+              @change="tableSearchIput(scope)"
             />
           </template>
-          <!-- <template slot-scope="scope">
-            <el-button type="danger" size="mini" @click="changeRowTable(scope)">
-              编辑
-            </el-button>
-          </template> -->
+          <template slot-scope="scope">
+            <div>
+              <el-button
+                type="info"
+                size="mini"
+                @click="changeRowTable(scope, 0)"
+              >
+                编辑
+              </el-button>
+            </div>
+            <div class="margin_top_5">
+              <el-button
+                type="danger"
+                size="mini"
+                @click="changeRowTable(scope, 1)"
+              >
+                删除
+              </el-button>
+            </div>
+          </template>
         </el-table-column>
       </el-table>
     </div>
@@ -48,27 +61,40 @@
       </el-pagination>
     </div>
     <!-- 编辑页面 -->
-    <!-- <div>
+    <div>
       <el-dialog
-        title="提示"
         :visible.sync="dialogVisible"
         width="30%"
         :close-on-click-modal="false"
+        :destroy-on-close="true"
       >
-        <span>{{ userFormData }}</span>
-        <span slot="footer" class="dialog-footer">
-          <el-button size="mini" @click="dialogVisible = false"
-            >取 消</el-button
+        <el-form label-width="80px" :model="userFormData">
+          <el-form-item
+            v-for="v in tableProp"
+            :key="v.groupBuyId"
+            :label="v.label"
           >
-          <el-button size="mini" type="primary" @click="dialogVisible = false">
-            确 定
-          </el-button>
-        </span>
+            <el-input v-model="userFormData[v.prop]"></el-input>
+          </el-form-item>
+          <el-form-item class="text_right">
+            <el-button size="mini" @click="dialogVisible = false">
+              取 消
+            </el-button>
+            <el-button size="mini" type="primary" @click="submitUserChange()">
+              提交
+            </el-button>
+          </el-form-item>
+        </el-form>
       </el-dialog>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script src="./nanGuoUser.js"></script>
 
-<style></style>
+<style lang="scss" scope>
+/deep/ .cell:empty::before {
+  content: "0";
+  color: red;
+}
+</style>

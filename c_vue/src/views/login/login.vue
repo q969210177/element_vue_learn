@@ -22,11 +22,20 @@
         </el-form-item>
         <el-form-item>
           <div class="text_right">
-            <el-button size="mini" type="success" @click="login('loginForm')">
+            <el-button
+              size="mini"
+              type="success"
+              class="btn btn-primary btn-ghost btn-shine"
+              @click="login('loginForm')"
+            >
               <div>登录</div>
               <div>Login</div>
             </el-button>
-            <el-button size="mini" @click="homepage">
+            <el-button
+              class="btn btn-primary btn-ghost btn-shine"
+              size="mini"
+              @click="homepage"
+            >
               <div>首页</div>
               <div>home</div>
             </el-button>
@@ -96,6 +105,11 @@
 }
 /deep/.el-input__suffix {
   color: green;
+}
+/deep/.el-button:focus,
+.el-button:hover {
+  background: transparent;
+  color: #0c0;
 }
 .login_form {
   padding-top: 20vh;

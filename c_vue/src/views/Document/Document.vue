@@ -1,9 +1,9 @@
 <template>
-  <div></div>
+  <div>
+    <test></test>
+  </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script src="./Document.js"></script>
 
 <style></style>

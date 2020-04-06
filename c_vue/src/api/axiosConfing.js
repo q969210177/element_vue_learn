@@ -15,8 +15,8 @@ axios.defaults.timeout = 5 * 1000;
 // 配置cookie
 // axios.defaults.withCredentials = true
 // 配置请求头
-axios.defaults.headers.post["Content-Type"] =
-  "application/x-www-form-urlencoded;charset=UTF-8";
+// axios.defaults.headers.post["Content-Type"] =
+//   "application/x-www-form-urlencoded;charset=UTF-8";
 // 静态资源
 // Vue.prototype.$static = "";
 // 配置接口地址
@@ -78,6 +78,21 @@ export function fetchGet(url, params) {
       .get(url, {
         params: params
       })
+      .then(res => {
+        resolve(res);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+}
+export function getJson(url) {
+  return new Promise((resolve, reject) => {
+    axios({
+      method: "get",
+      url: url,
+      responseType: "json"
+    })
       .then(res => {
         resolve(res);
       })

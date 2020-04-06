@@ -27,7 +27,7 @@ export default {
     return {};
   },
   mounted() {
-    console.log(this.$attrs);
+    //console.log(this.$attrs);
   },
   methods: {
     handleClick(item) {

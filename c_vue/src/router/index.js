@@ -4,24 +4,22 @@ import VueRouter from "vue-router";
 import { Message } from "element-ui";
 import Login from "../views/login/login.vue";
 import Home from "../views/home/Home.vue";
-import Wel from "../views/welcome/welcome.vue";
+// import Wel from "../views/welcome/welcome.vue";
 import Store from "../store/index.js";
-import { mapActions } from "vuex";
-//import { log } from "util";
-
+//import { mapActions } from "vuex";
 Vue.use(VueRouter);
 let id = sessionStorage.getItem("token");
 const routes = [
   {
-    path: "/login",
+    path: "/",
     name: "登陆",
     component: Login
   },
-  {
-    path: "/",
-    name: "欢迎页",
-    component: Wel
-  },
+  // {
+  //   path: "/",
+  //   name: "欢迎页",
+  //   component: Wel
+  // },
   {
     path: "/future",
     name: "对未来说两句吧",
@@ -93,13 +91,16 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.name;
-  // if (id !== null && Store.state.menuData === null) {
-  //   Store.dispatch("getMenuData", {
-  //     menuId: id[4]
-  //   });
-  // } else {
-  //   next();
-  // }
-  next();
+  let arr = ["/", "/common"];
+  if (arr.includes(to.path)) {
+    next();
+  } else {
+    if (Store.state.menuId === null && id === null) {
+      Message.error("非法登录");
+      next({ path: "/" });
+    } else {
+      next();
+    }
+  }
 });
 export default router;

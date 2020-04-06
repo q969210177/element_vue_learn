@@ -15,7 +15,8 @@
               :key="k"
               :replace="$store.state.globalBol.t"
               :to="{ path: v.path }"
-              >{{ v.name }}
+            >
+              {{ v.name }}
             </el-breadcrumb-item>
           </el-breadcrumb>
           <router-view />

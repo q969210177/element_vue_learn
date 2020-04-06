@@ -49,7 +49,7 @@ export default {
         window.open(path);
       } else {
         this.$router.push({ path: path });
-        if (path === "/login") {
+        if (path === "/") {
           sessionStorage.clear();
         }
       }

@@ -30,8 +30,6 @@ export default new Vuex.Store({
         context.state.menuData = res.data;
         context.state.menuId = vm.menuId;
       });
-
-      //context.state.menuData = JSON.parse(storeFile).menuData;
     }
   }
 });

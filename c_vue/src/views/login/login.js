@@ -39,8 +39,6 @@ export default {
             this.setToken(res.data.data[0].menuId, res.data.sum);
             //当用户登录成功的时候
             if (res.data.code === "0") {
-              console.log(res.data.data[0].menuId);
-
               this.$alertMessage(
                 {
                   text: "登录成功",

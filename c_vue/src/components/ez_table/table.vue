@@ -1,15 +1,19 @@
 <template>
   <div>
-    <el-table :data="tableData" :border="$attrs.tableOption.border">
+    <el-table
+      :data="tableData"
+      :border="$attrs.tableOption.border"
+      :stripe="$attrs.tableOption.stripe"
+    >
       <el-table-column
         v-for="(v, k) in laberProp"
         :key="k"
-        :prop="v.label"
-        :label="v.name"
+        :prop="v.prop"
+        :label="v.label"
         min-width="180"
       >
       </el-table-column>
-      <!--  @click="handleClick(scope.row)" -->
+
       <el-table-column
         v-if="operatingButton"
         fixed="right"
